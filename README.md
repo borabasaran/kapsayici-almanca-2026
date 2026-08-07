@@ -1,0 +1,1 @@
+# kapsayici-almanca-2026
