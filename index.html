@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Almanca Öğretiminde Kapsayıcı Sınıflar | TÜBİTAK 4008</title>
+<meta name="description" content="Anadolu Üniversitesi — TÜBİTAK 4008 destekli 'Almanca Öğretiminde Kapsayıcı Sınıflar: Öğretmenlerin Güçlendirilmesi' projesi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bordo:#7a1230;
+  --bordo-dark:#4d0b1e;
+  --bordo-light:#a3234a;
+  --ink:#1a1618;
+  --muted:#6b6165;
+  --line:#e6dfe1;
+  --paper:#fdfbfa;
+  --cream:#f6f0ec;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Outfit',system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  background:var(--bordo);
+  color:#fff;
+  padding:clamp(3rem,7vw,6rem) clamp(1.5rem,5vw,5rem) clamp(4rem,8vw,7rem);
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  right:-14%;
+  top:-28%;
+  width:min(58vw,620px);
+  aspect-ratio:1;
+  border-radius:50%;
+  background:var(--bordo-light);
+  opacity:.28;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  left:-8%;
+  bottom:-42%;
+  width:min(44vw,460px);
+  aspect-ratio:1;
+  border-radius:50%;
+  background:var(--bordo-dark);
+  opacity:.45;
+}
+.hero-inner{position:relative;z-index:2;max-width:1080px;margin:0 auto}
+.kurum{
+  font-size:.78rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  font-weight:500;
+  opacity:.85;
+  margin-bottom:1.6rem;
+}
+.rozet{
+  display:inline-block;
+  border:1px solid rgba(255,255,255,.45);
+  border-radius:2rem;
+  padding:.38rem 1.1rem;
+  font-size:.8rem;
+  letter-spacing:.05em;
+  margin-bottom:1.8rem;
+}
+h1{
+  font-family:'Fraunces',Georgia,serif;
+  font-weight:600;
+  font-size:clamp(2rem,5.2vw,3.6rem);
+  line-height:1.14;
+  letter-spacing:-.015em;
+  max-width:20ch;
+  margin-bottom:1.4rem;
+}
+.ozet{
+  font-weight:300;
+  font-size:clamp(1rem,1.6vw,1.18rem);
+  max-width:62ch;
+  opacity:.94;
+}
+
+/* ---------- GÖVDE ---------- */
+main{max-width:1080px;margin:0 auto;padding:0 clamp(1.5rem,5vw,5rem)}
+
+.serit{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+  margin-top:-3.2rem;
+  position:relative;
+  z-index:5;
+  border-radius:6px;
+  overflow:hidden;
+}
+.serit div{background:#fff;padding:1.5rem 1.4rem}
+.serit dt{
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:.45rem;
+}
+.serit dd{
+  font-family:'Fraunces',serif;
+  font-size:1.32rem;
+  font-weight:600;
+  color:var(--bordo);
+}
+
+section{padding:clamp(3rem,6vw,5rem) 0}
+h2{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-size:clamp(1.5rem,3vw,2.1rem);
+  letter-spacing:-.01em;
+  margin-bottom:.5rem;
+}
+.altbaslik{color:var(--muted);margin-bottom:2.6rem;max-width:58ch}
+
+/* ---------- EKİP ---------- */
+.yurutucu{
+  display:flex;
+  gap:1.8rem;
+  align-items:center;
+  background:var(--cream);
+  border-left:4px solid var(--bordo);
+  padding:1.8rem;
+  margin-bottom:2.6rem;
+  flex-wrap:wrap;
+}
+.ekip{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  gap:1.6rem 1.4rem;
+}
+.kisi{
+  border-top:1px solid var(--line);
+  padding-top:1.2rem;
+}
+.avatar{
+  width:82px;height:82px;
+  border-radius:50%;
+  object-fit:cover;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--bordo);
+  color:#fff;
+  font-family:'Fraunces',serif;
+  font-size:1.45rem;
+  font-weight:600;
+  letter-spacing:.02em;
+  margin-bottom:.9rem;
+  flex-shrink:0;
+}
+.yurutucu .avatar{width:110px;height:110px;font-size:1.95rem;margin-bottom:0}
+.ad{font-weight:500;font-size:1.02rem;line-height:1.35;margin-bottom:.2rem}
+.yurutucu .ad{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600}
+.birim{font-size:.88rem;color:var(--muted);line-height:1.5}
+.gorev{
+  display:inline-block;
+  margin-top:.55rem;
+  font-size:.73rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--bordo);
+  font-weight:500;
+}
+
+/* ---------- İÇERİK LİSTESİ ---------- */
+.moduller{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:1.2rem;
+}
+.modul{
+  border:1px solid var(--line);
+  padding:1.4rem 1.5rem;
+  border-radius:4px;
+  background:#fff;
+}
+.modul h3{
+  font-size:1rem;
+  font-weight:500;
+  margin-bottom:.4rem;
+}
+.modul p{font-size:.9rem;color:var(--muted);line-height:1.6}
+.numara{
+  font-family:'Fraunces',serif;
+  font-size:.85rem;
+  color:var(--bordo);
+  display:block;
+  margin-bottom:.6rem;
+}
+
+footer{
+  background:var(--bordo-dark);
+  color:rgba(255,255,255,.82);
+  padding:2.6rem clamp(1.5rem,5vw,5rem);
+  font-size:.88rem;
+  margin-top:3rem;
+}
+footer div{max-width:1080px;margin:0 auto}
+footer strong{color:#fff;font-weight:500}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kurum">Anadolu Üniversitesi &middot; Eğitim Fakültesi</p>
+    <span class="rozet">TÜBİTAK 4008 — Kapsayıcı Toplum Uygulamaları Destek Programı</span>
+    <h1>Almanca Öğretiminde Kapsayıcı Sınıflar</h1>
+    <p class="ozet">Kapsayıcı eğitim ortamlarında görev yapan Almanca öğretmenlerinin mesleki bilgi ve becerilerini geliştirmeyi; özel gereksinimli öğrencilerin dil edinim süreçlerine daha etkili destek sunulmasını hedefleyen bir öğretmen güçlendirme projesi.</p>
+  </div>
+</header>
+
+<main>
+
+  <dl class="serit">
+    <div><dt>Program</dt><dd>TÜBİTAK 4008</dd></div>
+    <div><dt>Uygulama ili</dt><dd>Eskişehir</dd></div>
+    <div><dt>Atölye süresi</dt><dd>3 gün</dd></div>
+    <div><dt>Ekip</dt><dd>8 kişi</dd></div>
+  </dl>
+
+  <section>
+    <h2>Proje ekibi</h2>
+    <p class="altbaslik">Alman dili eğitimi, özel eğitim ve akran aracılı öğretim alanlarından oluşan disiplinlerarası bir ekip.</p>
+
+    <div class="yurutucu">
+      <div class="avatar">BB</div>
+      <div>
+        <p class="ad">Doç. Dr. Bora Başaran</p>
+        <p class="birim">Alman Dili Eğitimi Anabilim Dalı — Almanca öğretimi ve eğitim teknolojileri</p>
+        <span class="gorev">Proje yürütücüsü</span>
+      </div>
+    </div>
+
+    <div class="ekip">
+      <article class="kisi">
+        <div class="avatar">GY</div>
+        <p class="ad">Doç. Dr. Gizem Yıldız</p>
+        <p class="birim">Özel Eğitim</p>
+        <span class="gorev">Araştırmacı</span>
+      </article>
+      <article class="kisi">
+        <div class="avatar">SS</div>
+        <p class="ad">Doç. Dr. Sunagül Sani Bozkurt</p>
+        <p class="birim">Özel Eğitim</p>
+        <span class="gorev">Araştırmacı</span>
+      </article>
+      <article class="kisi">
+        <div class="avatar">CK</div>
+        <p class="ad">Öğr. Gör. Dr. Cem Kalaycı</p>
+        <p class="birim">Akran aracılı öğretim</p>
+        <span class="gorev">Araştırmacı</span>
+      </article>
+      <article class="kisi">
+        <div class="avatar">YS</div>
+        <p class="ad">Arş. Gör. Yaşar Ali Sarkiler</p>
+        <p class="birim">Alman Dili Eğitimi</p>
+        <span class="gorev">Eğitmen</span>
+      </article>
+      <article class="kisi">
+        <div class="avatar">DK</div>
+        <p class="ad">Dilara Kılıç</p>
+        <p class="birim">Almanca Öğretmenliği, lisans</p>
+        <span class="gorev">Koordinasyon</span>
+      </article>
+      <article class="kisi">
+        <div class="avatar">YK</div>
+        <p class="ad">Yiğit Selçuk Koca</p>
+        <p class="birim">Almanca Öğretmenliği, lisans</p>
+        <span class="gorev">Koordinasyon</span>
+      </article>
+      <article class="kisi">
+        <div class="avatar">ST</div>
+        <p class="ad">Sema Nur Tunçyüz</p>
+        <p class="birim">Alman Dili Eğitimi, yüksek lisans</p>
+        <span class="gorev">Lojistik</span>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>Eğitim içeriği</h2>
+    <p class="altbaslik">Üç günlük yoğunlaştırılmış atölyelerde ele alınacak kanıt temelli pedagojik yaklaşımlar.</p>
+    <div class="moduller">
+      <div class="modul"><span class="numara">01</span><h3>Öğrenme için evrensel tasarım</h3><p>UDL ilkeleriyle erişilebilir ders planlama ve materyal uyarlama.</p></div>
+      <div class="modul"><span class="numara">02</span><h3>Çok duyulu dil öğretimi</h3><p>Farklı öğrenme kanallarını devreye sokan Almanca öğretim teknikleri.</p></div>
+      <div class="modul"><span class="numara">03</span><h3>Total Physical Response</h3><p>Bedensel tepki temelli sözcük ve yapı öğretimi uygulamaları.</p></div>
+      <div class="modul"><span class="numara">04</span><h3>Görsel destek stratejileri</h3><p>Görsel çizelgeler, sembol destekli materyaller ve yönerge kartları.</p></div>
+      <div class="modul"><span class="numara">05</span><h3>Yapılandırılmış öğretim</h3><p>Öngörülebilir sınıf düzeni ve basamaklandırılmış öğretim planları.</p></div>
+      <div class="modul"><span class="numara">06</span><h3>Yapay zekâ destekli uygulamalar</h3><p>Bireyselleştirilmiş materyal üretimi ve uyarlanabilir öğretim planları.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Beklenen çıktılar</h2>
+    <p class="altbaslik">Proje sonunda hazırlanacak dijital el kitabı ve uygulama videoları aracılığıyla elde edilen çıktılar daha geniş bir öğretmen kitlesiyle paylaşılacak; böylece kapsayıcı eğitim uygulamalarının yaygınlaştırılmasına katkı sağlanacaktır. Öğretmenlerin farklı öğrenme ihtiyaçlarına sahip öğrenciler için bireyselleştirilmiş ve uyarlanabilir öğretim planları geliştirme becerilerinin artırılması, kapsayıcı sınıf ortamlarının güçlendirilmesi ve ölçme-değerlendirme süreçlerinin daha etkin hâle getirilmesi hedeflenmektedir.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div>
+    <strong>Almanca Öğretiminde Kapsayıcı Sınıflar: Öğretmenlerin Güçlendirilmesi</strong><br>
+    Anadolu Üniversitesi Eğitim Fakültesi &middot; TÜBİTAK 4008 — Özel Gereksinimli Bireylere Yönelik Kapsayıcı Toplum Uygulamaları Destek Programı
+  </div>
+</footer>
+
+</body>
+</html>
