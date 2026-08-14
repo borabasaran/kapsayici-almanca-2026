@@ -2,327 +2,255 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Almanca Öğretiminde Kapsayıcı Sınıflar | TÜBİTAK 4008</title>
-<meta name="description" content="Anadolu Üniversitesi — TÜBİTAK 4008 destekli 'Almanca Öğretiminde Kapsayıcı Sınıflar: Öğretmenlerin Güçlendirilmesi' projesi.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#7a1230">
+<title>Etkinlik Programı | Almanca Öğretiminde Kapsayıcı Sınıflar</title>
+<meta name="description" content="TÜBİTAK 4008 — Almanca Öğretiminde Kapsayıcı Sınıflar: Öğretmenlerin Güçlendirilmesi. 15–18 Eylül 2026 etkinlik programı.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bordo:#7a1230;
-  --bordo-dark:#4d0b1e;
-  --bordo-light:#a3234a;
-  --ink:#1a1618;
-  --muted:#6b6165;
-  --line:#e6dfe1;
-  --paper:#fdfbfa;
-  --cream:#f6f0ec;
+  --bordo:#7a1230; --bordo-dk:#4d0b1e; --bordo-lt:#a3234a;
+  --ink:#1a1618; --muted:#6f666a; --line:#e8e1e3;
+  --paper:#fdfbfa; --cream:#f7f1ee;
+  --pad:clamp(1rem,5vw,5rem);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Outfit',system-ui,sans-serif;
-  background:var(--paper);
-  color:var(--ink);
-  line-height:1.7;
-  -webkit-font-smoothing:antialiased;
-}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Outfit',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button{font:inherit;color:inherit;-webkit-tap-highlight-color:transparent}
 
-/* ---------- HERO ---------- */
-.hero{
-  background:var(--bordo);
-  color:#fff;
-  padding:clamp(3rem,7vw,6rem) clamp(1.5rem,5vw,5rem) clamp(4rem,8vw,7rem);
-  position:relative;
-  overflow:hidden;
-}
-.hero::after{
-  content:"";
-  position:absolute;
-  right:-14%;
-  top:-28%;
-  width:min(58vw,620px);
-  aspect-ratio:1;
-  border-radius:50%;
-  background:var(--bordo-light);
-  opacity:.28;
-}
-.hero::before{
-  content:"";
-  position:absolute;
-  left:-8%;
-  bottom:-42%;
-  width:min(44vw,460px);
-  aspect-ratio:1;
-  border-radius:50%;
-  background:var(--bordo-dark);
-  opacity:.45;
-}
-.hero-inner{position:relative;z-index:2;max-width:1080px;margin:0 auto}
-.kurum{
-  font-size:.78rem;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  font-weight:500;
-  opacity:.85;
-  margin-bottom:1.6rem;
-}
-.rozet{
-  display:inline-block;
-  border:1px solid rgba(255,255,255,.45);
-  border-radius:2rem;
-  padding:.38rem 1.1rem;
-  font-size:.8rem;
-  letter-spacing:.05em;
-  margin-bottom:1.8rem;
-}
-h1{
-  font-family:'Fraunces',Georgia,serif;
-  font-weight:600;
-  font-size:clamp(2rem,5.2vw,3.6rem);
-  line-height:1.14;
-  letter-spacing:-.015em;
-  max-width:20ch;
-  margin-bottom:1.4rem;
-}
-.ozet{
-  font-weight:300;
-  font-size:clamp(1rem,1.6vw,1.18rem);
-  max-width:62ch;
-  opacity:.94;
-}
+@keyframes riseIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes drawLine{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes pop{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:none}}
 
-/* ---------- GÖVDE ---------- */
-main{max-width:1080px;margin:0 auto;padding:0 clamp(1.5rem,5vw,5rem)}
+.hero{background:var(--bordo);color:#fff;padding:clamp(2.2rem,6vw,5rem) var(--pad) clamp(3.2rem,7vw,6rem);position:relative;overflow:hidden}
+.hero>.wrap{position:relative;z-index:2}
+.blob{position:absolute;border-radius:50%;z-index:1;pointer-events:none}
+.blob.a{width:min(62vw,600px);aspect-ratio:1;right:-16%;top:-28%;background:var(--bordo-lt);opacity:.3;animation:fadeIn 1.2s ease both}
+.blob.b{width:min(46vw,430px);aspect-ratio:1;left:-12%;bottom:-42%;background:var(--bordo-dk);opacity:.5;animation:fadeIn 1.4s .1s ease both}
+.wrap{max-width:1040px;margin:0 auto}
+.kurum{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;opacity:.85;margin-bottom:1.1rem;animation:riseIn .7s ease both}
+.rozet{display:inline-block;border:1px solid rgba(255,255,255,.45);border-radius:2rem;padding:.32rem .95rem;font-size:.76rem;margin-bottom:1.3rem;animation:riseIn .7s .08s ease both}
+h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(1.65rem,6.5vw,3.3rem);line-height:1.16;letter-spacing:-.015em;max-width:19ch;margin-bottom:1rem;animation:riseIn .7s .16s ease both}
+.lead{font-weight:300;font-size:clamp(.94rem,3.4vw,1.14rem);max-width:60ch;opacity:.94;animation:riseIn .7s .24s ease both}
 
-.serit{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:1px;
-  background:var(--line);
-  border:1px solid var(--line);
-  margin-top:-3.2rem;
-  position:relative;
-  z-index:5;
-  border-radius:6px;
-  overflow:hidden;
-}
-.serit div{background:#fff;padding:1.5rem 1.4rem}
-.serit dt{
-  font-size:.72rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--muted);
-  margin-bottom:.45rem;
-}
-.serit dd{
-  font-family:'Fraunces',serif;
-  font-size:1.32rem;
-  font-weight:600;
-  color:var(--bordo);
-}
+main{max-width:1040px;margin:0 auto;padding:0 var(--pad)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-top:-2.6rem;position:relative;z-index:5;animation:riseIn .7s .3s ease both}
+.stats div{background:#fff;padding:1.1rem 1rem}
+.stats dt{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem}
+.stats dd{font-family:'Fraunces',serif;font-size:1.35rem;font-weight:600;color:var(--bordo);line-height:1.15}
+.stats dd small{font-family:'Outfit';font-size:.76rem;font-weight:400;color:var(--muted);display:block;margin-top:.1rem;line-height:1.35}
 
-section{padding:clamp(3rem,6vw,5rem) 0}
-h2{
-  font-family:'Fraunces',serif;
-  font-weight:600;
-  font-size:clamp(1.5rem,3vw,2.1rem);
-  letter-spacing:-.01em;
-  margin-bottom:.5rem;
-}
-.altbaslik{color:var(--muted);margin-bottom:2.6rem;max-width:58ch}
+.bolum{padding:clamp(2.2rem,5vw,4rem) 0 1rem}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.3rem,4.6vw,2rem);margin-bottom:.35rem}
+.alt{color:var(--muted);font-size:.94rem;margin-bottom:1.5rem;max-width:56ch}
 
-/* ---------- EKİP ---------- */
-.yurutucu{
-  display:flex;
-  gap:1.8rem;
-  align-items:center;
-  background:var(--cream);
-  border-left:4px solid var(--bordo);
-  padding:1.8rem;
-  margin-bottom:2.6rem;
-  flex-wrap:wrap;
-}
-.ekip{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
-  gap:1.6rem 1.4rem;
-}
-.kisi{
-  border-top:1px solid var(--line);
-  padding-top:1.2rem;
-}
-.avatar{
-  width:82px;height:82px;
-  border-radius:50%;
-  object-fit:cover;
-  display:flex;align-items:center;justify-content:center;
-  background:var(--bordo);
-  color:#fff;
-  font-family:'Fraunces',serif;
-  font-size:1.45rem;
-  font-weight:600;
-  letter-spacing:.02em;
-  margin-bottom:.9rem;
-  flex-shrink:0;
-}
-.yurutucu .avatar{width:110px;height:110px;font-size:1.95rem;margin-bottom:0}
-.ad{font-weight:500;font-size:1.02rem;line-height:1.35;margin-bottom:.2rem}
-.yurutucu .ad{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600}
-.birim{font-size:.88rem;color:var(--muted);line-height:1.5}
-.gorev{
-  display:inline-block;
-  margin-top:.55rem;
-  font-size:.73rem;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--bordo);
-  font-weight:500;
-}
+.kaydir{display:flex;gap:.5rem;overflow-x:auto;padding-bottom:.5rem;margin:0 calc(var(--pad)*-1);padding-left:var(--pad);padding-right:var(--pad);scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+.kaydir::-webkit-scrollbar{display:none}
+.sekme{flex:0 0 auto;scroll-snap-align:start;border:1px solid var(--line);background:#fff;border-radius:2rem;padding:.6rem 1.1rem;cursor:pointer;font-size:.9rem;color:var(--muted);transition:background .22s,border-color .22s,color .22s,transform .22s;line-height:1.3;min-height:44px;text-align:left}
+.sekme:hover{border-color:var(--bordo-lt);color:var(--bordo)}
+.sekme.aktif{background:var(--bordo);border-color:var(--bordo);color:#fff}
+.sekme b{display:block;font-weight:500;font-size:.7rem;letter-spacing:.06em;opacity:.78;text-transform:uppercase}
+.sekme.bos{opacity:.42}
+.sekme .adet{font-size:.7rem;opacity:.8;margin-left:.15rem}
 
-/* ---------- İÇERİK LİSTESİ ---------- */
-.moduller{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:1.2rem;
-}
-.modul{
-  border:1px solid var(--line);
-  padding:1.4rem 1.5rem;
-  border-radius:4px;
-  background:#fff;
-}
-.modul h3{
-  font-size:1rem;
-  font-weight:500;
-  margin-bottom:.4rem;
-}
-.modul p{font-size:.9rem;color:var(--muted);line-height:1.6}
-.numara{
-  font-family:'Fraunces',serif;
-  font-size:.85rem;
-  color:var(--bordo);
-  display:block;
-  margin-bottom:.6rem;
-}
+.filtreBaslik{font-size:.82rem;color:var(--muted);margin:1.5rem 0 .6rem}
+.chip{flex:0 0 auto;scroll-snap-align:start;border:1px solid var(--line);background:#fff;border-radius:2rem;padding:.5rem .9rem;cursor:pointer;font-size:.84rem;color:var(--muted);transition:background .2s,border-color .2s,color .2s;min-height:40px;white-space:nowrap}
+.chip:hover{border-color:var(--bordo-lt);color:var(--bordo)}
+.chip.aktif{background:var(--cream);border-color:var(--bordo);color:var(--bordo);font-weight:500}
 
-footer{
-  background:var(--bordo-dark);
-  color:rgba(255,255,255,.82);
-  padding:2.6rem clamp(1.5rem,5vw,5rem);
-  font-size:.88rem;
-  margin-top:3rem;
-}
-footer div{max-width:1080px;margin:0 auto}
+.gunbaslik{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;margin:1.5rem 0 1.2rem;padding-bottom:.6rem;border-bottom:1px solid var(--line);animation:fadeIn .4s ease both}
+.gunbaslik h3{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:600}
+.gunbaslik span{color:var(--muted);font-size:.86rem}
+.cizelge{position:relative;padding-left:1.6rem}
+.cizelge::before{content:"";position:absolute;left:.36rem;top:.4rem;bottom:.4rem;width:2px;background:linear-gradient(var(--bordo),var(--cream));transform-origin:top;animation:drawLine .8s cubic-bezier(.4,0,.2,1) both}
+.oturum{position:relative;margin-bottom:.8rem;animation:riseIn .5s ease both}
+.nokta{position:absolute;left:-1.6rem;top:1.15rem;width:10px;height:10px;border-radius:50%;background:var(--bordo);border:2px solid var(--paper);box-shadow:0 0 0 2px var(--bordo);animation:pop .4s ease both}
+.oturum.ara .nokta{background:var(--paper);box-shadow:0 0 0 2px var(--line)}
+.kart{border:1px solid var(--line);border-radius:8px;background:#fff;overflow:hidden;transition:border-color .22s,box-shadow .22s}
+.kart:hover{border-color:var(--bordo-lt);box-shadow:0 6px 18px rgba(26,22,24,.06)}
+.oturum.ara .kart{background:var(--cream);border-style:dashed}
+.ust{display:flex;gap:.85rem;align-items:flex-start;padding:.95rem 1rem;width:100%;background:none;border:0;text-align:left;cursor:pointer;min-height:44px}
+.oturum.ara .ust{cursor:default}
+.saat{font-family:'Fraunces',serif;font-size:.92rem;font-weight:600;color:var(--bordo);white-space:nowrap;min-width:4.9rem;padding-top:.1rem}
+.saat small{display:block;font-family:'Outfit';font-weight:400;font-size:.72rem;color:var(--muted)}
+.orta{flex:1;min-width:0}
+.baslik{font-weight:500;font-size:1rem;line-height:1.4;margin-bottom:.25rem;overflow-wrap:anywhere}
+.oturum.ara .baslik{font-weight:400;color:var(--muted);font-size:.93rem}
+.egitmen{font-size:.82rem;color:var(--muted);overflow-wrap:anywhere}
+.egitmen b{color:var(--bordo);font-weight:500}
+.ok{flex-shrink:0;width:24px;height:24px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:transform .28s ease,background .2s;margin-top:.1rem}
+.ok::after{content:"";width:5px;height:5px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:rotate(45deg) translate(-1px,-1px)}
+.kart.acik .ok{transform:rotate(180deg);background:var(--cream)}
+.govde{max-height:0;overflow:hidden;transition:max-height .38s cubic-bezier(.4,0,.2,1)}
+.iceric{padding:1rem;border-top:1px solid var(--line)}
+.iceric p{font-size:.9rem;color:#443d40;margin-bottom:.85rem;overflow-wrap:anywhere}
+.meta{display:flex;flex-wrap:wrap;gap:.35rem}
+.etiket{font-size:.74rem;background:var(--cream);color:var(--bordo-dk);border-radius:4px;padding:.24rem .55rem}
+.etiket.destek{background:#fff;border:1px solid var(--line);color:var(--muted)}
+.bosluk{border:1px dashed var(--line);border-radius:8px;padding:1.4rem 1.1rem;text-align:center;color:var(--muted);font-size:.9rem;animation:fadeIn .35s ease both}
+.bosluk b{color:var(--ink);font-weight:500}
+.bosluk button{margin-top:.7rem;border:1px solid var(--bordo);background:#fff;color:var(--bordo);border-radius:2rem;padding:.45rem 1rem;font-size:.84rem;cursor:pointer;min-height:40px}
+
+footer{background:var(--bordo-dk);color:rgba(255,255,255,.8);padding:2.2rem var(--pad);font-size:.84rem;margin-top:3rem}
 footer strong{color:#fff;font-weight:500}
+
+@media (min-width:560px){ .stats{grid-template-columns:repeat(4,1fr)} .stats div{padding:1.3rem 1.2rem} .stats dd{font-size:1.5rem} }
+@media (max-width:430px){
+  .ust{flex-wrap:wrap;gap:.5rem .7rem}
+  .saat{min-width:0;font-size:.86rem;order:1}
+  .saat small{display:inline;margin-left:.3rem}
+  .ok{order:2;margin-left:auto}
+  .orta{order:3;flex:1 0 100%}
+  .cizelge{padding-left:1.35rem}
+  .nokta{left:-1.35rem}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 
 <header class="hero">
-  <div class="hero-inner">
+  <div class="blob a"></div><div class="blob b"></div>
+  <div class="wrap">
     <p class="kurum">Anadolu Üniversitesi &middot; Eğitim Fakültesi</p>
-    <span class="rozet">TÜBİTAK 4008 — Kapsayıcı Toplum Uygulamaları Destek Programı</span>
+    <span class="rozet">TÜBİTAK 4008 &middot; Proje No 944960</span>
     <h1>Almanca Öğretiminde Kapsayıcı Sınıflar</h1>
-    <p class="ozet">Kapsayıcı eğitim ortamlarında görev yapan Almanca öğretmenlerinin mesleki bilgi ve becerilerini geliştirmeyi; özel gereksinimli öğrencilerin dil edinim süreçlerine daha etkili destek sunulmasını hedefleyen bir öğretmen güçlendirme projesi.</p>
+    <p class="lead">Öğretmenlerin güçlendirilmesine yönelik uygulamalı eğitim programı. 15–18 Eylül 2026, Anadolu Üniversitesi Eğitim Fakültesi Seminer Salonu.</p>
   </div>
 </header>
 
 <main>
-
-  <dl class="serit">
-    <div><dt>Program</dt><dd>TÜBİTAK 4008</dd></div>
-    <div><dt>Uygulama ili</dt><dd>Eskişehir</dd></div>
-    <div><dt>Atölye süresi</dt><dd>3 gün</dd></div>
-    <div><dt>Ekip</dt><dd>8 kişi</dd></div>
+  <dl class="stats">
+    <div><dt>Program</dt><dd>4 gün<small>15–18 Eylül 2026</small></dd></div>
+    <div><dt>Oturum</dt><dd>12<small>+ 4 yemek arası</small></dd></div>
+    <div><dt>Katılımcı</dt><dd>30<small>Almanca öğretmeni</small></dd></div>
+    <div><dt>Eğitmen</dt><dd>5<small>+ 3 destek ekibi</small></dd></div>
   </dl>
 
-  <section>
-    <h2>Proje ekibi</h2>
-    <p class="altbaslik">Alman dili eğitimi, özel eğitim ve akran aracılı öğretim alanlarından oluşan disiplinlerarası bir ekip.</p>
-
-    <div class="yurutucu">
-      <div class="avatar">BB</div>
-      <div>
-        <p class="ad">Doç. Dr. Bora Başaran</p>
-        <p class="birim">Alman Dili Eğitimi Anabilim Dalı — Almanca öğretimi ve eğitim teknolojileri</p>
-        <span class="gorev">Proje yürütücüsü</span>
-      </div>
-    </div>
-
-    <div class="ekip">
-      <article class="kisi">
-        <div class="avatar">GY</div>
-        <p class="ad">Doç. Dr. Gizem Yıldız</p>
-        <p class="birim">Özel Eğitim</p>
-        <span class="gorev">Araştırmacı</span>
-      </article>
-      <article class="kisi">
-        <div class="avatar">SS</div>
-        <p class="ad">Doç. Dr. Sunagül Sani Bozkurt</p>
-        <p class="birim">Özel Eğitim</p>
-        <span class="gorev">Araştırmacı</span>
-      </article>
-      <article class="kisi">
-        <div class="avatar">CK</div>
-        <p class="ad">Öğr. Gör. Dr. Cem Kalaycı</p>
-        <p class="birim">Akran aracılı öğretim</p>
-        <span class="gorev">Araştırmacı</span>
-      </article>
-      <article class="kisi">
-        <div class="avatar">YS</div>
-        <p class="ad">Arş. Gör. Yaşar Ali Sarkiler</p>
-        <p class="birim">Alman Dili Eğitimi</p>
-        <span class="gorev">Eğitmen</span>
-      </article>
-      <article class="kisi">
-        <div class="avatar">DK</div>
-        <p class="ad">Dilara Kılıç</p>
-        <p class="birim">Almanca Öğretmenliği, lisans</p>
-        <span class="gorev">Koordinasyon</span>
-      </article>
-      <article class="kisi">
-        <div class="avatar">YK</div>
-        <p class="ad">Yiğit Selçuk Koca</p>
-        <p class="birim">Almanca Öğretmenliği, lisans</p>
-        <span class="gorev">Koordinasyon</span>
-      </article>
-      <article class="kisi">
-        <div class="avatar">ST</div>
-        <p class="ad">Sema Nur Tunçyüz</p>
-        <p class="birim">Alman Dili Eğitimi, yüksek lisans</p>
-        <span class="gorev">Lojistik</span>
-      </article>
-    </div>
+  <section class="bolum">
+    <h2>Etkinlik programı</h2>
+    <p class="alt">Gün seçin, oturum başlığına dokunarak ayrıntıyı açın.</p>
+    <div class="kaydir" id="sekmeler"></div>
+    <p class="filtreBaslik">Eğitmene göre süz</p>
+    <div class="kaydir" id="filtre"></div>
+    <div id="icerik"></div>
   </section>
-
-  <section>
-    <h2>Eğitim içeriği</h2>
-    <p class="altbaslik">Üç günlük yoğunlaştırılmış atölyelerde ele alınacak kanıt temelli pedagojik yaklaşımlar.</p>
-    <div class="moduller">
-      <div class="modul"><span class="numara">01</span><h3>Öğrenme için evrensel tasarım</h3><p>UDL ilkeleriyle erişilebilir ders planlama ve materyal uyarlama.</p></div>
-      <div class="modul"><span class="numara">02</span><h3>Çok duyulu dil öğretimi</h3><p>Farklı öğrenme kanallarını devreye sokan Almanca öğretim teknikleri.</p></div>
-      <div class="modul"><span class="numara">03</span><h3>Total Physical Response</h3><p>Bedensel tepki temelli sözcük ve yapı öğretimi uygulamaları.</p></div>
-      <div class="modul"><span class="numara">04</span><h3>Görsel destek stratejileri</h3><p>Görsel çizelgeler, sembol destekli materyaller ve yönerge kartları.</p></div>
-      <div class="modul"><span class="numara">05</span><h3>Yapılandırılmış öğretim</h3><p>Öngörülebilir sınıf düzeni ve basamaklandırılmış öğretim planları.</p></div>
-      <div class="modul"><span class="numara">06</span><h3>Yapay zekâ destekli uygulamalar</h3><p>Bireyselleştirilmiş materyal üretimi ve uyarlanabilir öğretim planları.</p></div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Beklenen çıktılar</h2>
-    <p class="altbaslik">Proje sonunda hazırlanacak dijital el kitabı ve uygulama videoları aracılığıyla elde edilen çıktılar daha geniş bir öğretmen kitlesiyle paylaşılacak; böylece kapsayıcı eğitim uygulamalarının yaygınlaştırılmasına katkı sağlanacaktır. Öğretmenlerin farklı öğrenme ihtiyaçlarına sahip öğrenciler için bireyselleştirilmiş ve uyarlanabilir öğretim planları geliştirme becerilerinin artırılması, kapsayıcı sınıf ortamlarının güçlendirilmesi ve ölçme-değerlendirme süreçlerinin daha etkin hâle getirilmesi hedeflenmektedir.</p>
-  </section>
-
 </main>
 
 <footer>
-  <div>
+  <div class="wrap">
     <strong>Almanca Öğretiminde Kapsayıcı Sınıflar: Öğretmenlerin Güçlendirilmesi</strong><br>
     Anadolu Üniversitesi Eğitim Fakültesi &middot; TÜBİTAK 4008 — Özel Gereksinimli Bireylere Yönelik Kapsayıcı Toplum Uygulamaları Destek Programı
   </div>
 </footer>
 
+<script>
+const GUNLER = [{"kod": "2026-09-15", "etiket": "1. Gün", "tarih": "15 Eylül 2026", "gun": "Salı", "oturumlar": [{"no": 1, "baslik": "Kapsayıcı Eğitim, Kanıt Temelli Uygulamalar ve Doğrudan Öğretim", "tarih": "2026-09-15", "bas": "10:00", "bit": "11:00", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi Seminer Salonu", "aciklama": "Bu oturumda, kapsayıcı eğitim bağlamında öğretim süreçlerinin etkililiğini artırmayı amaçlayan kanıt temelli uygulamalar kavramı ele alınacaktır.", "egitmenler": ["Doç. Dr. Gizem Yıldız"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}, {"no": 2, "baslik": "Kanıt Temelli Uygulamalar ve Doğrudan Öğretim Yöntemi", "tarih": "2026-09-15", "bas": "11:00", "bit": "12:00", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi Seminer Salonu", "aciklama": "Bu oturumda,kanıt temelli uygulamaların kuramsal dayanakları açıklanacak; bu yaklaşımların öğretim sürecinde neden ve nasıl tercih edilmesi gerektiği, kapsayıcı eğitim perspektifiyle tartışılacaktır.", "egitmenler": ["Doç. Dr. Gizem Yıldız"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}, {"no": 3, "baslik": "Öğle Yemeği", "tarih": "2026-09-15", "bas": "12:15", "bit": "13:00", "kisi": 34, "mekan": "Anadolu Üniversitesi Yemekhanesi", "aciklama": "Öğlen yemeği için Anadolu üniversitesi yemekhanesi kullanılacaktır.", "egitmenler": [], "destek": [], "mola": true}, {"no": 4, "baslik": "Kapsayıcı Eğitimin Felsefesi ve ÖG Özellikleri", "tarih": "2026-09-15", "bas": "14:00", "bit": "15:30", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi Seminer Salonu", "aciklama": "Bu oturumda, kapsayıcı eğitim uygulamalarının felsefi ve ampirik temellerine ilişkin genel bir çerçeve sunulacaktır. Kapsayıcı eğitimin eşitlik, erişilebilirlik ve katılım ilkeleri doğrultusunda nasıl yapılandırıldığı ele alınacak; bu yaklaşımın öğretim süreçlerine yansımaları kuramsal bir perspektifle tartışılacaktır. Oturum, kapsayıcı eğitimin kuramsal temelleri ile farklı öğrenen profillerinin özelliklerini bütüncül bir bakış açısıyla ele almayı amaçlamaktadır.", "egitmenler": ["Doç. Dr. Gizem Yıldız"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}]}, {"kod": "2026-09-16", "etiket": "2. Gün", "tarih": "16 Eylül 2026", "gun": "Çarşamba", "oturumlar": [{"no": 5, "baslik": "Kanıt Temelli Uygulamalar ve Doğrudan Öğretim Yöntemi", "tarih": "2026-09-16", "bas": "10:00", "bit": "12:00", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi Seminer Salonu", "aciklama": "Yöntemin temel ilkeleri, öğretim basamakları ve sınıf içi uygulanış süreci ele alınacak; özellikle özel eğitim gereksinimi olan öğrencilerin öğrenme süreçlerini desteklemedeki işlevi üzerinde durulacaktır. Oturum, doğrudan öğretim yaklaşımının Almanca öğretimi bağlamında nasıl planlanabileceğini ve öğretmenlerin bu yöntemi kendi derslerine nasıl uyarlayabileceklerini uygulamaya dönük örnekler üzerinden tartışmayı amaçlamaktadır.", "egitmenler": ["Doç. Dr. Gizem Yıldız"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}, {"no": 6, "baslik": "Öğle Yemeği", "tarih": "2026-09-16", "bas": "12:00", "bit": "13:15", "kisi": 34, "mekan": "Anadolu Üniversitesi Yemekhanesi", "aciklama": "Öğlen yemeği için Anadolu üniversitesi yemekhanesinden yararlanılacaktır.", "egitmenler": [], "destek": [], "mola": true}, {"no": 7, "baslik": "Akran Aracılı Öğretimle Dil Gelişiminin Desteklenmesi", "tarih": "2026-09-16", "bas": "14:00", "bit": "15:30", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi Seminer Salonu", "aciklama": "Bu oturumda, kapsayıcı eğitim bağlamında kanıt temelli öğretim yaklaşımlarından biri olan Akran Aracılı Öğretim Yöntemi ele alınacaktır. Oturumun amacı, akran etkileşimine dayalı bu yöntemin kuramsal temellerini tanıtmak ve yöntemin dil gelişimini desteklemedeki işlevini Almanca öğretimi bağlamında ortaya koymaktır.", "egitmenler": ["Öğr. Gör. Dr. Cem Kalaycı"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}, {"no": 8, "baslik": "Uygulama: Doğrudan öğretim basamaklarına göre bir Almanca gramer konusunun mikro-öğretim taslağını hazırlama", "tarih": "2026-09-16", "bas": "15:30", "bit": "16:30", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi Seminer Salonu", "aciklama": "Bu uygulama oturumu, öğretmenlerin Doğrudan Öğretim yöntemini kuramsal bir çerçeveden çıkararak sınıf içi uygulamalara dönüştürebilmelerini sağlamak üzere Doğrudan Öğretimin dört temel basamağını kısaca hatırlatarak bu basamakların öğretim sürecindeki işlevini açıklayacak ve katılımcılara kullanılacak mikro-öğretim taslak formunu tanıtacaktır. Bu aşamada öğretmenlerin yöntem hakkında ortak bir anlayış geliştirmeleri hedeflenmektedir.", "egitmenler": ["Öğr. Gör. Dr. Cem Kalaycı"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}]}, {"kod": "2026-09-17", "etiket": "3. Gün", "tarih": "17 Eylül 2026", "gun": "Perşembe", "oturumlar": [{"no": 9, "baslik": "Özel Eğitimde Teknoloji Kullanımı ve Yapay Zeka", "tarih": "2026-09-17", "bas": "10:00", "bit": "12:00", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi Seminer Salonu", "aciklama": "Oturum, özel eğitim gereksinimi olan öğrencilerin dil öğrenme süreçlerini desteklemeye yönelik teknolojik araçların pedagojik işlevlerini tanıtmayı ve bu araçların Almanca öğretimi bağlamında nasıl kullanılabileceğini tartışmayı amaçlamaktadır.", "egitmenler": ["Doç. Dr. Sunagül Sani Bozkurt"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}, {"no": 10, "baslik": "Öğle Yemeği", "tarih": "2026-09-17", "bas": "12:15", "bit": "13:15", "kisi": 35, "mekan": "Anadolu Üniversitesi Yemekhanesi", "aciklama": "Öğlen yemeği için Anadolu üniversitesi yemekhanesinden yararlanılacaktır.", "egitmenler": [], "destek": [], "mola": true}, {"no": 11, "baslik": "Kapsayıcı Almanca Öğretimi İçin Dil Stratejileri ve Uygulamalı Teknikler", "tarih": "2026-09-17", "bas": "14:00", "bit": "15:00", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi Seminer Salonu", "aciklama": "Etkinlik, öğretmenlerin kapsayıcı sınıflarda Almanca öğretimine yönelik erişilebilir, uyarlanabilir ve kanıt temelli dil öğretim yaklaşımlarını tanımalarını ve bu yaklaşımları kendi sınıf içi uygulamalarına bilinçli bir biçimde aktarabilmelerini hedeflemektedir.", "egitmenler": ["Doç. Dr. Bora Başaran"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}, {"no": 12, "baslik": "Kapsayıcı Almanca Öğretimi İçin Dil Stratejileri ve Uygulamalı Teknikler", "tarih": "2026-09-17", "bas": "15:15", "bit": "16:45", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi Seminer Salonu", "aciklama": "Bu devam oturumunda kapsayıcı Almanca Öğretimi İçin Dil Stratejileri ve Uygulamalı Teknikler'e yönelik örnekler sunularak tamamlayıcı uygulamalar gerçekleştirilecektir.", "egitmenler": ["Doç. Dr. Bora Başaran"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}]}, {"kod": "2026-09-18", "etiket": "4. Gün", "tarih": "18 Eylül 2026", "gun": "Cuma", "oturumlar": [{"no": 13, "baslik": "Öğrenme İçin Evrensel Tasarım ve Çok Duyulu Dil Öğretimi Yaklaşımları", "tarih": "2026-09-18", "bas": "10:00", "bit": "12:00", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi Seminer Salonu", "aciklama": "Öğrenme İçin Evrensel Tasarım (Universal Design for Learning – UDL) 3.0 çerçevesi (CAST, 2024) ve bu çerçevenin çok duyulu dil öğretimine uygulanışı ele alınacaktır.", "egitmenler": ["Arş. Gör. Yaşar Ali Sarkiler"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}, {"no": 14, "baslik": "Öğle Yemeği", "tarih": "2026-09-18", "bas": "12:15", "bit": "13:15", "kisi": 34, "mekan": "Anadolu Üniversitesi Yemekhanesi", "aciklama": "Öğlen yemeği için Anadolu üniversitesi yemekhanesinden yararlanılacaktır.", "egitmenler": [], "destek": [], "mola": true}, {"no": 15, "baslik": "TPR, Görsel Destekler ve Yapılandırılmış Öğretim Teknikleriyle Almanca Öğretimi", "tarih": "2026-09-18", "bas": "14:00", "bit": "15:30", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi Seminer Salonu", "aciklama": "Total Physical Response (TPR), görsel destek stratejileri ve yapılandırılmış öğretim yöntemleri. Oturumun temel amacı, bu yaklaşımların kapsayıcı sınıf ortamlarında Almanca öğretimini nasıl daha erişilebilir, anlaşılır ve sürdürülebilir hâle getirdiğini kuramsal ve uygulamalı boyutlarıyla sunulacaktır", "egitmenler": ["Doç. Dr. Bora Başaran"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}, {"no": 16, "baslik": "Değerlendirme Oturumu", "tarih": "2026-09-18", "bas": "15:45", "bit": "16:45", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi Seminer Salonu", "aciklama": "Programın değerlendirme oturumunda, eğitim sürecinin genel etkililiği çok boyutlu olarak ele alınacaktır. Bu kapsamda katılımcı öğretmenlerin kapsayıcı Almanca öğretimine ilişkin bilgi ve farkındalık düzeylerindeki değişimi belirlemeye yönelik son değerlendirme uygulamaları gerçekleştirilecektir.", "egitmenler": ["Doç. Dr. Bora Başaran", "Doç. Dr. Sunagül Sani Bozkurt", "Öğr. Gör. Dr. Cem Kalaycı", "Doç. Dr. Gizem Yıldız", "Arş. Gör. Yaşar Ali Sarkiler"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}]}];
+let aktifGun = 0, aktifEgitmen = null;
+
+const egitmenler = [];
+GUNLER.forEach(g => g.oturumlar.forEach(o => o.egitmenler.forEach(e => {
+  if (!egitmenler.includes(e)) egitmenler.push(e);
+})));
+egitmenler.sort((a,b) => a.localeCompare(b,'tr'));
+
+const kisaAd = e => e.replace(/^(Doç\. Dr\.|Öğr\. Gör\. Dr\.|Arş\. Gör\.)\s*/,'');
+const esles = o => !aktifEgitmen || o.egitmenler.indexOf(aktifEgitmen) !== -1;
+const gunOturum = g => g.oturumlar.filter(o => !o.mola && esles(o));
+
+function sekmeleriCiz(){
+  document.getElementById('sekmeler').innerHTML = GUNLER.map((g,i) => {
+    const n = gunOturum(g).length;
+    const bos = aktifEgitmen && n === 0;
+    return '<button class="sekme' + (i===aktifGun?' aktif':'') + (bos?' bos':'') + '" data-i="' + i + '">' +
+           '<b>' + g.etiket + '</b>' + g.tarih +
+           (aktifEgitmen ? '<span class="adet"> · ' + n + ' oturum</span>' : '') + '</button>';
+  }).join('');
+}
+
+function filtreCiz(){
+  document.getElementById('filtre').innerHTML =
+    '<button class="chip' + (aktifEgitmen===null?' aktif':'') + '" data-e="">Tüm eğitmenler</button>' +
+    egitmenler.map(e => {
+      let t = 0;
+      GUNLER.forEach(g => g.oturumlar.forEach(o => { if(!o.mola && o.egitmenler.indexOf(e)!==-1) t++; }));
+      return '<button class="chip' + (aktifEgitmen===e?' aktif':'') + '" data-e="' + e + '">' +
+             kisaAd(e) + ' · ' + t + '</button>';
+    }).join('');
+}
+
+function icerikCiz(){
+  const g = GUNLER[aktifGun];
+  const list = g.oturumlar.filter(o => aktifEgitmen ? (!o.mola && esles(o)) : true);
+  let govde;
+  if (list.length === 0){
+    const varGun = GUNLER.map((x,i)=>({i,n:gunOturum(x).length})).filter(x=>x.n>0);
+    govde = '<div class="bosluk"><b>' + kisaAd(aktifEgitmen) + '</b> bu günde oturum yürütmüyor.' +
+      (varGun.length ? '<br>Oturumları: ' + varGun.map(x=>GUNLER[x.i].etiket).join(', ') +
+        '<br><button data-git="' + varGun[0].i + '">' + GUNLER[varGun[0].i].etiket + '\u2019ne git</button>' : '') +
+      '</div>';
+  } else {
+    govde = '<div class="cizelge">' + list.map((o,i) =>
+      '<div class="oturum' + (o.mola?' ara':'') + '" style="animation-delay:' + (i*0.055).toFixed(3) + 's">' +
+        '<span class="nokta" style="animation-delay:' + (i*0.055+0.1).toFixed(3) + 's"></span>' +
+        '<div class="kart">' +
+          (o.mola
+            ? '<div class="ust"><div class="saat">' + o.bas + '<small>' + o.bit + '</small></div>' +
+              '<div class="orta"><div class="baslik">' + o.baslik + '</div></div></div>'
+            : '<button class="ust" type="button" aria-expanded="false">' +
+                '<div class="saat">' + o.bas + '<small>' + o.bit + '</small></div>' +
+                '<div class="orta"><div class="baslik">' + o.baslik + '</div>' +
+                '<div class="egitmen"><b>' + o.egitmenler.join(', ') + '</b></div></div>' +
+                '<span class="ok"></span></button>' +
+              '<div class="govde"><div class="iceric"><p>' + o.aciklama + '</p><div class="meta">' +
+                o.egitmenler.map(e=>'<span class="etiket">'+e+'</span>').join('') +
+                o.destek.map(d=>'<span class="etiket destek">'+d+'</span>').join('') +
+                '<span class="etiket destek">' + o.kisi + ' katılımcı</span>' +
+              '</div></div></div>') +
+        '</div></div>').join('') + '</div>';
+  }
+  document.getElementById('icerik').innerHTML =
+    '<div class="gunbaslik"><h3>' + g.etiket + '</h3><span>' + g.tarih + ' · ' + g.gun + '</span></div>' + govde;
+}
+
+function ciz(){ sekmeleriCiz(); filtreCiz(); icerikCiz(); }
+
+document.addEventListener('click', function(e){
+  const git = e.target.closest('[data-git]');
+  if (git){ aktifGun = +git.dataset.git; ciz(); return; }
+  const s = e.target.closest('.sekme');
+  if (s){ aktifGun = +s.dataset.i; ciz(); return; }
+  const c = e.target.closest('.chip');
+  if (c){
+    aktifEgitmen = c.dataset.e || null;
+    if (aktifEgitmen && gunOturum(GUNLER[aktifGun]).length === 0){
+      const ilk = GUNLER.findIndex(g => gunOturum(g).length > 0);
+      if (ilk !== -1) aktifGun = ilk;
+    }
+    ciz(); return;
+  }
+  const u = e.target.closest('button.ust');
+  if (u){
+    const k = u.parentElement, gv = k.querySelector('.govde');
+    const acik = k.classList.toggle('acik');
+    u.setAttribute('aria-expanded', acik ? 'true' : 'false');
+    gv.style.maxHeight = acik ? gv.scrollHeight + 'px' : '0px';
+  }
+});
+
+window.addEventListener('resize', function(){
+  document.querySelectorAll('.kart.acik .govde').forEach(function(gv){
+    gv.style.transition = 'none';
+    gv.style.maxHeight = gv.scrollHeight + 'px';
+    requestAnimationFrame(function(){ gv.style.transition = ''; });
+  });
+});
+
+ciz();
+</script>
 </body>
 </html>
