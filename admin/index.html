@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#7a1230">
+<title>Yönetim | Almanca Öğretiminde Kapsayıcı Sınıflar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bordo:#7a1230;--bordo-dk:#4d0b1e;--bordo-lt:#a3234a;--ink:#1a1618;--muted:#6f666a;--line:#e8e1e3;--paper:#fdfbfa;--cream:#f7f1ee;--ok:#1d6b43;--pad:clamp(1rem,4vw,2.5rem)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+button,input{font:inherit;color:inherit}
+[hidden]{display:none!important}
+header{background:var(--bordo);color:#fff;padding:1.1rem var(--pad)}
+header .ic{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+header h1{font-family:'Fraunces',serif;font-weight:600;font-size:1.2rem}
+header small{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+header a,header button{color:#fff;font-size:.84rem;background:none;border:1px solid rgba(255,255,255,.4);border-radius:2rem;padding:.4rem .9rem;text-decoration:none;cursor:pointer;min-height:38px}
+main{max-width:960px;margin:0 auto;padding:1.6rem var(--pad) 7rem}
+.kutu{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.4rem}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.3rem;margin-bottom:.4rem}
+.alt{color:var(--muted);font-size:.9rem;margin-bottom:1rem}
+label{display:block;font-size:.8rem;font-weight:500;color:var(--muted);margin:.8rem 0 .3rem}
+input[type=text],input[type=url],input[type=password]{width:100%;border:1px solid var(--line);border-radius:6px;padding:.62rem .75rem;background:#fff;min-height:44px}
+input:focus{outline:2px solid var(--bordo-lt);outline-offset:1px;border-color:transparent}
+.btn{border:1px solid var(--bordo);background:var(--bordo);color:#fff;border-radius:2rem;padding:.6rem 1.2rem;cursor:pointer;font-weight:500;min-height:44px;font-size:.9rem}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn.ikincil{background:#fff;color:var(--bordo)}
+.btn.kucuk{padding:.35rem .8rem;min-height:36px;font-size:.82rem}
+.sil{border:0;background:none;color:var(--muted);cursor:pointer;font-size:.8rem;padding:.3rem .5rem;border-radius:4px;min-height:34px}
+.sil:hover{color:var(--bordo);background:var(--cream)}
+.onay{display:flex;align-items:center;gap:.5rem;margin:.8rem 0 1rem;font-size:.86rem;color:var(--muted)}
+.hata{color:var(--bordo);font-size:.86rem;margin-top:.7rem}
+details.yardim{margin-top:1.2rem;font-size:.86rem;color:#443d40;border-top:1px solid var(--line);padding-top:1rem}
+details.yardim summary{cursor:pointer;color:var(--bordo);font-weight:500}
+details.yardim ol{margin:.6rem 0 0 1.2rem;display:grid;gap:.3rem}
+
+.sekmeler{display:flex;gap:.5rem;overflow-x:auto;margin-bottom:1rem;padding-bottom:.3rem;scrollbar-width:none}
+.sekme{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:2rem;padding:.5rem 1rem;cursor:pointer;font-size:.86rem;color:var(--muted);min-height:42px;white-space:nowrap}
+.sekme.aktif{background:var(--bordo);border-color:var(--bordo);color:#fff}
+.sekme .say{font-size:.72rem;opacity:.8;margin-left:.25rem}
+
+.oturum{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:.8rem;overflow:hidden}
+.oturum.degisti{border-color:var(--bordo-lt)}
+.obas{display:flex;gap:.9rem;align-items:flex-start;padding:.9rem 1rem;width:100%;border:0;background:none;text-align:left;cursor:pointer}
+.obas .saat{font-family:'Fraunces',serif;font-weight:600;color:var(--bordo);font-size:.9rem;min-width:3.4rem}
+.obas .orta{flex:1;min-width:0}
+.obas .b{font-weight:500;line-height:1.35}
+.obas .e{font-size:.8rem;color:var(--muted)}
+.durum{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.35rem}
+.dz{font-size:.7rem;border-radius:2rem;padding:.1rem .55rem;background:var(--cream);color:var(--muted)}
+.dz.var{background:#e7f3ec;color:var(--ok)}
+.ogovde{border-top:1px solid var(--line);padding:1rem;display:grid;gap:1.2rem;background:var(--paper)}
+@media (min-width:760px){.ogovde{grid-template-columns:1fr 1fr}}
+.grup h3{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;font-weight:500}
+.oge{display:flex;gap:.7rem;align-items:center;background:#fff;border:1px solid var(--line);border-radius:6px;padding:.5rem;margin-bottom:.45rem}
+.oge img{width:88px;aspect-ratio:16/9;object-fit:cover;border-radius:4px;background:var(--bordo-dk);flex-shrink:0}
+.oge .pdf{width:34px;height:40px;border-radius:3px;background:var(--cream);color:var(--bordo);font-size:.58rem;font-weight:600;display:flex;align-items:flex-end;justify-content:center;padding-bottom:.3rem;flex-shrink:0}
+.oge .m{flex:1;min-width:0;font-size:.86rem;line-height:1.3;overflow-wrap:anywhere}
+.oge .m small{display:block;color:var(--muted);font-size:.74rem}
+.yeni{font-size:.7rem;color:var(--bordo);font-weight:600}
+.ekle{background:#fff;border:1px dashed var(--line);border-radius:6px;padding:.3rem .8rem .8rem}
+.ekle .satir{display:flex;gap:.5rem;margin-top:.6rem;flex-wrap:wrap;align-items:center}
+.dosyasec{font-size:.84rem;max-width:100%}
+.bos{font-size:.84rem;color:var(--muted);margin-bottom:.45rem}
+
+.alt-cubuk{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(26,22,24,.06);padding:.8rem var(--pad);z-index:10}
+.alt-cubuk .ic{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.alt-cubuk .mesaj{font-size:.88rem;color:var(--muted)}
+.alt-cubuk .mesaj.basari{color:var(--ok)}
+.alt-cubuk .mesaj.hata{color:var(--bordo);margin:0}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="ic">
+    <div><small>TÜBİTAK 4008 · Yönetim</small><h1>Eğitim videoları ve çalışma notları</h1></div>
+    <div style="display:flex;gap:.5rem">
+      <a href="../" target="_blank" rel="noopener">Sayfayı aç ↗</a>
+      <button id="cikis" type="button" hidden>Çıkış</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Giriş -->
+  <section id="giris" class="kutu" style="max-width:520px;margin:2rem auto 0">
+    <h2>Giriş</h2>
+    <p class="alt">Yönetim sayfası değişiklikleri doğrudan GitHub deposuna kaydeder. Giriş için GitHub erişim anahtarınızı yapıştırın.</p>
+    <label for="anahtar">GitHub erişim anahtarı</label>
+    <input id="anahtar" type="password" autocomplete="off" placeholder="github_pat_…">
+    <div class="onay"><input id="hatirla" type="checkbox" checked> <label for="hatirla" style="margin:0;font-weight:400">Bu cihazda hatırla</label></div>
+    <button id="girisBtn" class="btn" type="button">Giriş yap</button>
+    <p id="girisHata" class="hata" hidden></p>
+    <details class="yardim">
+      <summary>Anahtarı nasıl oluştururum?</summary>
+      <ol>
+        <li>GitHub’da <b>Settings → Developer settings → Personal access tokens → Fine-grained tokens</b> sayfasını açın.</li>
+        <li><b>Generate new token</b>’a tıklayın, bir ad ve süre verin.</li>
+        <li><b>Repository access</b>: “Only select repositories” → <b>kapsayici-almanca-2026</b>.</li>
+        <li><b>Permissions → Contents</b>: “Read and write”.</li>
+        <li>Oluşan anahtarı kopyalayıp buraya yapıştırın.</li>
+      </ol>
+    </details>
+  </section>
+
+  <!-- Panel -->
+  <section id="panel" hidden>
+    <h2>Oturumlar</h2>
+    <p class="alt">Bir oturumu açın, eğitim videosunun YouTube bağlantısını ve çalışma notlarını ekleyin. Bitirince alttaki <b>Yayınla</b> düğmesine basın.</p>
+    <div class="sekmeler" id="gunler"></div>
+    <div id="oturumlar"></div>
+  </section>
+</main>
+
+<div class="alt-cubuk" id="cubuk" hidden>
+  <div class="ic">
+    <span class="mesaj" id="mesaj">Kaydedilmemiş değişiklik yok.</span>
+    <div style="display:flex;gap:.5rem">
+      <button class="btn ikincil" id="vazgec" type="button" disabled>Vazgeç</button>
+      <button class="btn" id="yayinla" type="button" disabled>Yayınla</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const DEPO = 'borabasaran/kapsayici-almanca-2026';
+const DAL = 'main';
+const API = 'https://api.github.com/repos/' + DEPO;
+const AZAMI_MB = 25;
+
+let anahtar = null, GUNLER = [], veri = {oturumlar: {}}, kayitli = '{}', jsonSha = null;
+let bekleyenDosyalar = {};   // geçici kimlik -> File
+let silinecekler = [];       // depo yolları
+let aktifGun = 0, acikOturum = null;
+
+const $ = id => document.getElementById(id);
+const kacis = t => String(t == null ? '' : t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function ytKimlik(u){
+  u = String(u || '').trim();
+  if (/^[\w-]{11}$/.test(u)) return u;
+  const m = u.match(/(?:youtu\.be\/|[?&]v=|\/embed\/|\/shorts\/|\/live\/)([\w-]{11})/);
+  return m ? m[1] : null;
+}
+function sade(t){
+  const h = {'ç':'c','ğ':'g','ı':'i','ö':'o','ş':'s','ü':'u','Ç':'c','Ğ':'g','İ':'i','Ö':'o','Ş':'s','Ü':'u'};
+  return String(t).replace(/[çğıöşüÇĞİÖŞÜ]/g, c => h[c]).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,50) || 'not';
+}
+const utf8b64 = s => { const b = new TextEncoder().encode(s); let x=''; for (let i=0;i<b.length;i+=0x8000) x += String.fromCharCode.apply(null, b.subarray(i,i+0x8000)); return btoa(x); };
+const b64utf8 = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g,'')), c => c.charCodeAt(0)));
+const dosyaB64 = f => new Promise((ok, red) => { const r = new FileReader(); r.onload = () => ok(String(r.result).split(',')[1]); r.onerror = red; r.readAsDataURL(f); });
+
+async function gh(yol, ayar = {}){
+  const r = await fetch(API + yol, Object.assign({}, ayar, {headers: Object.assign({
+    'Authorization': 'Bearer ' + anahtar, 'Accept': 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28'
+  }, ayar.headers || {})}));
+  if (!r.ok){
+    const e = new Error('GitHub ' + r.status); e.durum = r.status;
+    try { e.detay = (await r.json()).message; } catch(_){}
+    throw e;
+  }
+  return r.status === 204 ? null : r.json();
+}
+
+/* ---- Giriş ---- */
+function kayitliAnahtar(){ try { return localStorage.getItem('4008_anahtar') || sessionStorage.getItem('4008_anahtar'); } catch(_) { return null; } }
+function anahtarSakla(a, kalici){ try { (kalici ? localStorage : sessionStorage).setItem('4008_anahtar', a); } catch(_){} }
+function anahtarSil(){ try { localStorage.removeItem('4008_anahtar'); sessionStorage.removeItem('4008_anahtar'); } catch(_){} }
+
+async function girisYap(a, kalici){
+  anahtar = a;
+  $('girisBtn').disabled = true; $('girisHata').hidden = true;
+  try {
+    const depo = await gh('');
+    if (!depo.permissions || !depo.permissions.push) throw Object.assign(new Error('yetki'), {durum: 403});
+    await verileriYukle();
+    if (kalici !== undefined) anahtarSakla(a, kalici);
+    $('giris').hidden = true; $('panel').hidden = false; $('cubuk').hidden = false; $('cikis').hidden = false;
+    ciz();
+  } catch(e){
+    anahtar = null;
+    $('girisHata').textContent = e.durum === 401 ? 'Anahtar geçersiz ya da süresi dolmuş.' :
+      e.durum === 403 || e.durum === 404 ? 'Bu anahtarın depoya yazma yetkisi yok. “Contents: Read and write” iznini ve depo seçimini kontrol edin.' :
+      'Bağlantı kurulamadı: ' + (e.detay || e.message);
+    $('girisHata').hidden = false;
+    if (kalici === undefined) { anahtarSil(); $('giris').hidden = false; }
+  } finally { $('girisBtn').disabled = false; }
+}
+
+async function verileriYukle(){
+  const html = await (await fetch('../index.html', {cache: 'no-cache'})).text();
+  const m = html.match(/const GUNLER = (\[[\s\S]*?\]);\s*\n/);
+  if (!m) throw new Error('Program bilgisi okunamadı');
+  GUNLER = JSON.parse(m[1]);
+  try {
+    const d = await gh('/contents/materyaller.json?ref=' + DAL);
+    jsonSha = d.sha;
+    veri = JSON.parse(b64utf8(d.content));
+  } catch(e){
+    if (e.durum !== 404) throw e;
+    jsonSha = null; veri = {oturumlar: {}};
+  }
+  if (!veri.oturumlar) veri.oturumlar = {};
+  kayitli = JSON.stringify(veri);
+  bekleyenDosyalar = {}; silinecekler = [];
+}
+
+/* ---- Çizim ---- */
+const om = no => veri.oturumlar[String(no)] || {videolar: [], notlar: []};
+function omYaz(no, m){
+  if (!m.videolar.length && !m.notlar.length) delete veri.oturumlar[String(no)];
+  else veri.oturumlar[String(no)] = m;
+}
+function kayitliOm(no){ return JSON.stringify((JSON.parse(kayitli).oturumlar || {})[String(no)] || null); }
+function degistiMi(){ return JSON.stringify(veri) !== kayitli || silinecekler.length > 0; }
+
+function ciz(){
+  $('gunler').innerHTML = GUNLER.map((g, i) => {
+    const say = g.oturumlar.filter(o => !o.mola && veri.oturumlar[String(o.no)]).length;
+    const top = g.oturumlar.filter(o => !o.mola).length;
+    return '<button class="sekme' + (i === aktifGun ? ' aktif' : '') + '" data-gun="' + i + '">' + g.etiket + ' · ' + g.tarih + '<span class="say">' + say + '/' + top + '</span></button>';
+  }).join('');
+  $('oturumlar').innerHTML = GUNLER[aktifGun].oturumlar.filter(o => !o.mola).map(o => {
+    const m = om(o.no), acik = acikOturum === o.no;
+    const vs = m.videolar || [], ns = m.notlar || [];
+    const degisti = JSON.stringify(veri.oturumlar[String(o.no)] || null) !== kayitliOm(o.no);
+    return '<article class="oturum' + (degisti ? ' degisti' : '') + '">' +
+      '<button class="obas" type="button" data-ac="' + o.no + '" aria-expanded="' + acik + '">' +
+        '<span class="saat">' + o.bas + '</span><span class="orta"><span class="b">' + kacis(o.baslik) + '</span>' +
+        '<span class="e" style="display:block">' + kacis(o.egitmenler.join(', ')) + '</span>' +
+        '<span class="durum"><span class="dz' + (vs.length ? ' var' : '') + '">' + (vs.length ? '✓ ' + vs.length + ' video' : 'Video yok') + '</span>' +
+        '<span class="dz' + (ns.length ? ' var' : '') + '">' + (ns.length ? '✓ ' + ns.length + ' not' : 'Not yok') + '</span>' +
+        (degisti ? '<span class="dz" style="background:var(--cream);color:var(--bordo)">Kaydedilmedi</span>' : '') + '</span></span>' +
+        '<span style="color:var(--muted)">' + (acik ? '▴' : '▾') + '</span></button>' +
+      (acik ? '<div class="ogovde">' +
+        '<div class="grup"><h3>Eğitim videosu</h3>' +
+          (vs.length ? '' : '<p class="bos">Henüz video eklenmedi.</p>') +
+          vs.map((v, i) => '<div class="oge"><img alt="" src="https://i.ytimg.com/vi/' + ytKimlik(v.youtube) + '/mqdefault.jpg">' +
+            '<div class="m">' + kacis(v.baslik || '(başlıksız)') + '<small>' + kacis(v.youtube) + '</small></div>' +
+            '<button class="sil" type="button" data-silv="' + o.no + ':' + i + '">Kaldır</button></div>').join('') +
+          '<div class="ekle"><label for="vb' + o.no + '">Video başlığı</label><input type="text" id="vb' + o.no + '" placeholder="Örn. Doğrudan öğretim yöntemi">' +
+          '<label for="vu' + o.no + '">YouTube bağlantısı</label><input type="url" id="vu' + o.no + '" placeholder="https://youtu.be/…">' +
+          '<div class="satir"><button class="btn kucuk" type="button" data-ekv="' + o.no + '">Videoyu ekle</button><span class="hata" id="vh' + o.no + '" style="margin:0"></span></div></div>' +
+        '</div>' +
+        '<div class="grup"><h3>Çalışma notları</h3>' +
+          (ns.length ? '' : '<p class="bos">Henüz not eklenmedi.</p>') +
+          ns.map((n, i) => '<div class="oge"><span class="pdf">' + kacis((n.dosya.split('.').pop() || '').toUpperCase().slice(0,4)) + '</span>' +
+            '<div class="m">' + kacis(n.baslik) + '<small>' + (n._gecici ? '<span class="yeni">YENİ · ' + kacis((bekleyenDosyalar[n._gecici] || {}).name) + '</span>' : kacis(n.dosya)) + '</small></div>' +
+            '<button class="sil" type="button" data-siln="' + o.no + ':' + i + '">Kaldır</button></div>').join('') +
+          '<div class="ekle"><label for="nb' + o.no + '">Not başlığı</label><input type="text" id="nb' + o.no + '" placeholder="Örn. Doğrudan öğretim basamakları">' +
+          '<label for="nd' + o.no + '">Dosya (PDF, Word, PowerPoint)</label><input class="dosyasec" type="file" id="nd' + o.no + '" accept=".pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.zip">' +
+          '<div class="satir"><button class="btn kucuk" type="button" data-ekn="' + o.no + '">Notu ekle</button><span class="hata" id="nh' + o.no + '" style="margin:0"></span></div></div>' +
+        '</div></div>' : '') +
+    '</article>';
+  }).join('');
+  cubukGuncelle();
+}
+
+function cubukGuncelle(mesaj, tur){
+  const d = degistiMi();
+  $('yayinla').disabled = !d; $('vazgec').disabled = !d;
+  const el = $('mesaj');
+  el.className = 'mesaj' + (tur ? ' ' + tur : '');
+  el.textContent = mesaj || (d ? 'Kaydedilmemiş değişiklikler var.' : 'Kaydedilmemiş değişiklik yok.');
+}
+
+/* ---- Olaylar ---- */
+document.addEventListener('click', e => {
+  const t = e.target.closest('button'); if (!t) return;
+  const d = t.dataset;
+  if (d.gun !== undefined){ aktifGun = +d.gun; acikOturum = null; ciz(); return; }
+  if (d.ac){ acikOturum = acikOturum === +d.ac ? null : +d.ac; ciz(); return; }
+  if (d.ekv){
+    const no = d.ekv, u = $('vu' + no).value.trim(), b = $('vb' + no).value.trim();
+    if (!ytKimlik(u)){ $('vh' + no).textContent = 'Geçerli bir YouTube bağlantısı girin.'; return; }
+    const m = om(no); m.videolar = m.videolar || []; m.notlar = m.notlar || [];
+    m.videolar.push({baslik: b, youtube: u}); omYaz(no, m); ciz(); return;
+  }
+  if (d.ekn){
+    const no = d.ekn, f = $('nd' + no).files[0], b = $('nb' + no).value.trim();
+    if (!f){ $('nh' + no).textContent = 'Bir dosya seçin.'; return; }
+    if (f.size > AZAMI_MB * 1024 * 1024){ $('nh' + no).textContent = 'Dosya ' + AZAMI_MB + ' MB’tan büyük olamaz.'; return; }
+    const uz = (f.name.match(/\.([a-z0-9]{2,4})$/i) || [,'pdf'])[1].toLowerCase();
+    const kimlik = 'g' + Date.now();
+    bekleyenDosyalar[kimlik] = f;
+    const m = om(no); m.videolar = m.videolar || []; m.notlar = m.notlar || [];
+    m.notlar.push({baslik: b || f.name.replace(/\.[^.]+$/, ''), dosya: 'notlar/' + no + '-' + sade(b || f.name.replace(/\.[^.]+$/, '')) + '-' + Date.now().toString(36) + '.' + uz, _gecici: kimlik});
+    omYaz(no, m); ciz(); return;
+  }
+  if (d.silv){
+    const [no, i] = d.silv.split(':'); const m = om(no);
+    if (!confirm('Bu video kaldırılsın mı?')) return;
+    m.videolar.splice(+i, 1); omYaz(no, m); ciz(); return;
+  }
+  if (d.siln){
+    const [no, i] = d.siln.split(':'); const m = om(no); const n = m.notlar[+i];
+    if (!confirm('“' + n.baslik + '” notu kaldırılsın mı?')) return;
+    if (n._gecici) delete bekleyenDosyalar[n._gecici]; else silinecekler.push(n.dosya);
+    m.notlar.splice(+i, 1); omYaz(no, m); ciz(); return;
+  }
+});
+
+$('girisBtn').onclick = () => { const a = $('anahtar').value.trim(); if (a) girisYap(a, $('hatirla').checked); };
+$('anahtar').addEventListener('keydown', e => { if (e.key === 'Enter') $('girisBtn').click(); });
+$('cikis').onclick = () => {
+  if (degistiMi() && !confirm('Kaydedilmemiş değişiklikler silinecek. Çıkılsın mı?')) return;
+  anahtarSil(); location.reload();
+};
+$('vazgec').onclick = () => {
+  if (!confirm('Kaydedilmemiş tüm değişiklikler geri alınsın mı?')) return;
+  veri = JSON.parse(kayitli); bekleyenDosyalar = {}; silinecekler = []; ciz();
+};
+window.addEventListener('beforeunload', e => { if (anahtar && degistiMi()){ e.preventDefault(); e.returnValue = ''; } });
+
+$('yayinla').onclick = async () => {
+  $('yayinla').disabled = true; $('vazgec').disabled = true;
+  try {
+    // 1) Yeni dosyaları yükle
+    const yeniler = [];
+    Object.values(veri.oturumlar).forEach(m => (m.notlar || []).forEach(n => { if (n._gecici) yeniler.push(n); }));
+    for (let i = 0; i < yeniler.length; i++){
+      const n = yeniler[i];
+      cubukGuncelle('Dosya yükleniyor (' + (i + 1) + '/' + yeniler.length + '): ' + n.baslik);
+      await gh('/contents/' + n.dosya.split('/').map(encodeURIComponent).join('/'), {method: 'PUT', body: JSON.stringify({
+        message: 'Çalışma notu eklendi: ' + n.baslik, content: await dosyaB64(bekleyenDosyalar[n._gecici]), branch: DAL
+      })});
+      delete bekleyenDosyalar[n._gecici]; delete n._gecici;
+    }
+    // 2) Kaldırılan dosyaları sil
+    for (const yol of silinecekler.slice()){
+      cubukGuncelle('Kaldırılan dosya siliniyor…');
+      try {
+        const bilgi = await gh('/contents/' + yol.split('/').map(encodeURIComponent).join('/') + '?ref=' + DAL);
+        await gh('/contents/' + yol.split('/').map(encodeURIComponent).join('/'), {method: 'DELETE', body: JSON.stringify({message: 'Çalışma notu kaldırıldı', sha: bilgi.sha, branch: DAL})});
+      } catch(e){ if (e.durum !== 404) throw e; }
+      silinecekler.splice(silinecekler.indexOf(yol), 1);
+    }
+    // 3) materyaller.json
+    cubukGuncelle('Liste kaydediliyor…');
+    const govde = {message: 'Materyal listesi güncellendi', content: utf8b64(JSON.stringify(veri, null, 2) + '\n'), branch: DAL};
+    if (jsonSha) govde.sha = jsonSha;
+    const sonuc = await gh('/contents/materyaller.json', {method: 'PUT', body: JSON.stringify(govde)});
+    jsonSha = sonuc.content.sha;
+    kayitli = JSON.stringify(veri);
+    ciz();
+    cubukGuncelle('Yayınlandı. Sayfa 1–2 dakika içinde güncellenir.', 'basari');
+  } catch(e){
+    ciz();
+    cubukGuncelle(e.durum === 409 ? 'Liste başka bir yerde değişmiş. Sayfayı yenileyip tekrar deneyin.' : 'Kaydedilemedi: ' + (e.detay || e.message), 'hata');
+    $('yayinla').disabled = false;
+  }
+};
+
+// Başlangıç
+(function(){
+  const a = kayitliAnahtar();
+  if (a){ $('giris').hidden = true; girisYap(a); }
+})();
+</script>
+</body>
+</html>
