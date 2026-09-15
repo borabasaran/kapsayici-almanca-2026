@@ -98,6 +98,39 @@ h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.3rem,4.6vw,2re
 footer{background:var(--bordo-dk);color:rgba(255,255,255,.8);padding:2.2rem var(--pad);font-size:.84rem;margin-top:3rem}
 footer strong{color:#fff;font-weight:500}
 
+
+/* ---- Materyaller (video & ders notu) ---- */
+.rozetler{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.4rem}
+.mrozet{display:inline-flex;align-items:center;gap:.3rem;font-size:.7rem;font-weight:500;letter-spacing:.02em;color:var(--bordo);background:var(--cream);border-radius:2rem;padding:.14rem .55rem}
+.mrozet svg{width:11px;height:11px;fill:currentColor}
+.materyal{margin:0 0 1rem;display:grid;gap:.8rem}
+.mbaslik{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.1rem}
+.video{position:relative;width:100%;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:var(--bordo-dk)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt-oynat{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;cursor:pointer;background:var(--bordo-dk) center/cover no-repeat;display:flex;align-items:center;justify-content:center}
+.yt-oynat::before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(20,6,12,.72))}
+.yt-oynat .play{position:relative;width:62px;height:62px;border-radius:50%;background:rgba(122,18,48,.92);display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.yt-oynat .play::after{content:"";margin-left:4px;border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent #fff}
+.yt-oynat:hover .play{transform:scale(1.07);background:var(--bordo)}
+.yt-oynat .vad{position:absolute;left:.8rem;right:.8rem;bottom:.65rem;color:#fff;font-size:.86rem;font-weight:500;text-align:left;line-height:1.35;overflow-wrap:anywhere}
+.notlar{display:flex;flex-direction:column;gap:.4rem}
+.not{display:flex;align-items:center;gap:.7rem;border:1px solid var(--line);border-radius:6px;padding:.6rem .8rem;text-decoration:none;color:var(--ink);background:#fff;min-height:44px;transition:border-color .2s,background .2s}
+.not:hover{border-color:var(--bordo-lt);background:var(--paper)}
+.not .ikon{flex-shrink:0;width:30px;height:36px;border-radius:3px;background:var(--cream);color:var(--bordo);font-size:.58rem;font-weight:600;display:flex;align-items:flex-end;justify-content:center;padding-bottom:.3rem;letter-spacing:.04em}
+.not .ad{flex:1;min-width:0;font-size:.88rem;line-height:1.35;overflow-wrap:anywhere}
+.not .ind{flex-shrink:0;font-size:.76rem;color:var(--bordo);font-weight:500}
+
+.mliste{display:grid;gap:1.6rem}
+.mgun h3{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;margin-bottom:.7rem;display:flex;gap:.5rem;align-items:baseline;flex-wrap:wrap}
+.mgun h3 span{font-family:'Outfit';font-weight:400;font-size:.84rem;color:var(--muted)}
+.mkartlar{display:grid;grid-template-columns:1fr;gap:.8rem}
+.mkart{border:1px solid var(--line);border-radius:8px;background:#fff;padding:1rem;display:flex;flex-direction:column;gap:.7rem;min-width:0}
+.mkart .ks{font-family:'Fraunces',serif;font-size:.84rem;font-weight:600;color:var(--bordo)}
+.mkart .kb{font-weight:500;line-height:1.4;overflow-wrap:anywhere}
+.mkart .ke{font-size:.8rem;color:var(--muted)}
+.mkart .git{align-self:flex-start;border:0;background:none;color:var(--bordo);font-size:.8rem;cursor:pointer;padding:.3rem 0;text-decoration:underline;text-underline-offset:3px;min-height:36px}
+@media (min-width:720px){ .mkartlar{grid-template-columns:repeat(2,1fr)} }
+
 @media (min-width:560px){ .stats{grid-template-columns:repeat(4,1fr)} .stats div{padding:1.3rem 1.2rem} .stats dd{font-size:1.5rem} }
 @media (max-width:430px){
   .ust{flex-wrap:wrap;gap:.5rem .7rem}
@@ -139,6 +172,12 @@ footer strong{color:#fff;font-weight:500}
     <div class="kaydir" id="filtre"></div>
     <div id="icerik"></div>
   </section>
+
+  <section class="bolum" id="materyaller" hidden>
+    <h2>Eğitim materyalleri</h2>
+    <p class="alt">Oturum kayıtları ve ders notları. Video oynatmak için görsele, notu açmak için dosya adına dokunun.</p>
+    <div class="mliste" id="materyalListe"></div>
+  </section>
 </main>
 
 <footer>
@@ -151,6 +190,76 @@ footer strong{color:#fff;font-weight:500}
 <script>
 const GUNLER = [{"kod": "24.09.2026", "etiket": "1. Gün", "tarih": "24 Eylül 2026", "gun": "Perşembe", "oturumlar": [{"no": 1, "baslik": "Kapsayıcı Eğitim, Kanıt Temelli Uygulamalar ve Doğrudan Öğretim", "bas": "09:00", "bit": "10:00", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi A-Blok Porsuk Konferans Salonu", "aciklama": "Bu oturumda, kapsayıcı eğitim bağlamında öğretim süreçlerinin etkililiğini artırmayı amaçlayan kanıt temelli uygulamalar kavramı ele alınacaktır.", "egitmenler": ["Doç. Dr. Gizem Yıldız"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}, {"no": 2, "baslik": "Kanıt Temelli Uygulamalar ve Doğrudan Öğretim Yöntemi", "bas": "10:00", "bit": "11:00", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi A-Blok Porsuk Konferans Salonu", "aciklama": "Bu oturumda, kanıt temelli uygulamaların kuramsal dayanakları açıklanacak; bu yaklaşımların öğretim sürecinde neden ve nasıl tercih edilmesi gerektiği, kapsayıcı eğitim perspektifiyle tartışılacaktır.", "egitmenler": ["Doç. Dr. Gizem Yıldız"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}, {"no": 3, "baslik": "Kapsayıcı Eğitimin Felsefesi ve ÖG Özellikleri", "bas": "11:00", "bit": "12:00", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi A-Blok Porsuk Konferans Salonu", "aciklama": "Bu oturumda, kapsayıcı eğitim uygulamalarının felsefi ve ampirik temellerine ilişkin genel bir çerçeve sunulacaktır. Kapsayıcı eğitimin eşitlik, erişilebilirlik ve katılım ilkeleri doğrultusunda nasıl yapılandırıldığı ele alınacak; bu yaklaşımın öğretim süreçlerine yansımaları kuramsal bir perspektifle tartışılacaktır.", "egitmenler": ["Doç. Dr. Gizem Yıldız"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}, {"no": 4, "baslik": "Öğle Yemeği", "bas": "12:00", "bit": "13:00", "kisi": 34, "mekan": "Anadolu Üniversitesi Yemekhanesi", "aciklama": "Öğlen yemeği için Anadolu Üniversitesi yemekhanesinden yararlanılacaktır.", "egitmenler": [], "destek": [], "mola": true}, {"no": 5, "baslik": "Kanıt Temelli Uygulamalar ve Doğrudan Öğretim Yöntemi", "bas": "13:00", "bit": "14:15", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi A-Blok Porsuk Konferans Salonu", "aciklama": "Yöntemin temel ilkeleri, öğretim basamakları ve sınıf içi uygulanış süreci ele alınacak; özellikle özel eğitim gereksinimi olan öğrencilerin öğrenme süreçlerini desteklemedeki işlevi üzerinde durulacaktır. Oturum, doğrudan öğretim yaklaşımının Almanca öğretimi bağlamında nasıl planlanabileceğini ve öğretmenlerin bu yöntemi kendi derslerine nasıl uyarlayabileceklerini uygulamaya dönük örnekler üzerinden tartışmayı amaçlamaktadır.", "egitmenler": ["Doç. Dr. Gizem Yıldız"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}, {"no": 6, "baslik": "Akran Aracılı Öğretimle Dil Gelişiminin Desteklenmesi", "bas": "14:15", "bit": "15:30", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi A-Blok Porsuk Konferans Salonu", "aciklama": "Bu oturumda, kapsayıcı eğitim bağlamında kanıt temelli öğretim yaklaşımlarından biri olan Akran Aracılı Öğretim Yöntemi ele alınacaktır. Oturumun amacı, akran etkileşimine dayalı bu yöntemin kuramsal temellerini tanıtmak ve yöntemin dil gelişimini desteklemedeki işlevini Almanca öğretimi bağlamında ortaya koymaktır.", "egitmenler": ["Öğr. Gör. Dr. Cem Kalaycı"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}, {"no": 7, "baslik": "Özel Eğitimde Teknoloji Kullanımı ve Yapay Zeka", "bas": "15:30", "bit": "17:00", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi A-Blok Porsuk Konferans Salonu", "aciklama": "Oturum, özel eğitim gereksinimi olan öğrencilerin dil öğrenme süreçlerini desteklemeye yönelik teknolojik araçların pedagojik işlevlerini tanıtmayı ve bu araçların Almanca öğretimi bağlamında nasıl kullanılabileceğini tartışmayı amaçlamaktadır.", "egitmenler": ["Doç. Dr. Sunagül Sani Bozkurt"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}]}, {"kod": "26.09.2026", "etiket": "2. Gün", "tarih": "26 Eylül 2026", "gun": "Cumartesi", "oturumlar": [{"no": 8, "baslik": "Uygulama: Doğrudan öğretim basamaklarına göre bir Almanca gramer konusunun mikro-öğretim taslağını hazırlama", "bas": "10:00", "bit": "12:00", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi A-Blok Porsuk Konferans Salonu", "aciklama": "Bu uygulama oturumu, öğretmenlerin Doğrudan Öğretim yöntemini kuramsal bir çerçeveden çıkararak sınıf içi uygulamalara dönüştürebilmelerini sağlamak üzere Doğrudan Öğretimin temel basamaklarını hatırlatacak ve katılımcılara mikro-öğretim taslak formunu tanıtacaktır.", "egitmenler": ["Öğr. Gör. Dr. Cem Kalaycı"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}, {"no": 9, "baslik": "Öğle Yemeği", "bas": "12:00", "bit": "13:00", "kisi": 34, "mekan": "Anadolu Üniversitesi Sosyal Tesisleri", "aciklama": "Öğlen yemeği için Anadolu Üniversitesi sosyal tesislerinden yararlanılacaktır.", "egitmenler": [], "destek": [], "mola": true}]}, {"kod": "01.10.2026", "etiket": "3. Gün", "tarih": "1 Ekim 2026", "gun": "Perşembe", "oturumlar": [{"no": 10, "baslik": "Kapsayıcı Almanca Öğretimi İçin Dil Stratejileri ve Uygulamalı Teknikler", "bas": "09:00", "bit": "10:30", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi A-Blok Porsuk Konferans Salonu", "aciklama": "Etkinlik, öğretmenlerin kapsayıcı sınıflarda Almanca öğretimine yönelik erişilebilir, uyarlanabilir ve kanıt temelli dil öğretim yaklaşımlarını tanımalarını ve bu yaklaşımları kendi sınıf içi uygulamalarına bilinçli bir biçimde aktarabilmelerini hedeflemektedir.", "egitmenler": ["Doç. Dr. Bora Başaran"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}, {"no": 11, "baslik": "Kapsayıcı Almanca Öğretimi İçin Dil Stratejileri ve Uygulamalı Teknikler", "bas": "10:30", "bit": "12:00", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi A-Blok Porsuk Konferans Salonu", "aciklama": "Bu devam oturumunda Kapsayıcı Almanca Öğretimi İçin Dil Stratejileri ve Uygulamalı Teknikler'e yönelik örnekler sunularak tamamlayıcı uygulamalar gerçekleştirilecektir.", "egitmenler": ["Doç. Dr. Bora Başaran"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}, {"no": 12, "baslik": "Öğle Yemeği", "bas": "12:00", "bit": "13:00", "kisi": 34, "mekan": "Anadolu Üniversitesi Yemekhanesi", "aciklama": "Öğlen yemeği için Anadolu Üniversitesi yemekhanesinden yararlanılacaktır.", "egitmenler": [], "destek": [], "mola": true}, {"no": 13, "baslik": "Öğrenme İçin Evrensel Tasarım ve Çok Duyulu Dil Öğretimi Yaklaşımları", "bas": "13:00", "bit": "15:00", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi A-Blok Porsuk Konferans Salonu", "aciklama": "Öğrenme İçin Evrensel Tasarım (Universal Design for Learning – UDL) 3.0 çerçevesi (CAST, 2024) ve bu çerçevenin çok duyulu dil öğretimine uygulanışı ele alınacaktır.", "egitmenler": ["Arş. Gör. Yaşar Ali Sarkiler"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}]}, {"kod": "03.10.2026", "etiket": "4. Gün", "tarih": "3 Ekim 2026", "gun": "Cumartesi", "oturumlar": [{"no": 14, "baslik": "TPR, Görsel Destekler ve Yapılandırılmış Öğretim Teknikleriyle Almanca Öğretimi", "bas": "10:00", "bit": "11:30", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi A-Blok Porsuk Konferans Salonu", "aciklama": "Total Physical Response (TPR), görsel destek stratejileri ve yapılandırılmış öğretim yöntemleri ele alınacaktır. Oturumun temel amacı, bu yaklaşımların kapsayıcı sınıf ortamlarında Almanca öğretimini nasıl daha erişilebilir, anlaşılır ve sürdürülebilir hâle getirdiğini kuramsal ve uygulamalı boyutlarıyla sunmaktır.", "egitmenler": ["Doç. Dr. Bora Başaran"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}, {"no": 15, "baslik": "Öğle Yemeği", "bas": "11:30", "bit": "12:30", "kisi": 34, "mekan": "Anadolu Üniversitesi Sosyal Tesisleri", "aciklama": "Öğlen yemeği için Anadolu Üniversitesi sosyal tesislerinden yararlanılacaktır.", "egitmenler": [], "destek": [], "mola": true}, {"no": 16, "baslik": "Değerlendirme Oturumu", "bas": "12:30", "bit": "14:00", "kisi": 30, "mekan": "Anadolu Üniversitesi Eğitim Fakültesi A-Blok Porsuk Konferans Salonu", "aciklama": "Programın değerlendirme oturumunda, eğitim sürecinin genel etkililiği çok boyutlu olarak ele alınacaktır. Bu kapsamda katılımcı öğretmenlerin kapsayıcı Almanca öğretimine ilişkin bilgi ve farkındalık düzeylerindeki değişimi belirlemeye yönelik son değerlendirme uygulamaları gerçekleştirilecektir.", "egitmenler": ["Doç. Dr. Bora Başaran", "Doç. Dr. Sunagül Sani Bozkurt", "Öğr. Gör. Dr. Cem Kalaycı", "Doç. Dr. Gizem Yıldız", "Arş. Gör. Yaşar Ali Sarkiler"], "destek": ["Yiğit Selçuk Koca", "Sema Nur Tunçyüz", "Dilara Kılıç"], "mola": false}]}];
 let aktifGun = 0, aktifEgitmen = null;
+
+/* ---- Materyaller: materyaller.json dosyasından okunur ---- */
+let MATERYAL = {};
+const kacis = t => String(t == null ? '' : t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function ytKimlik(u){
+  u = String(u || '').trim();
+  if (/^[\w-]{11}$/.test(u)) return u;
+  const m = u.match(/(?:youtu\.be\/|[?&]v=|\/embed\/|\/shorts\/|\/live\/)([\w-]{11})/);
+  return m ? m[1] : null;
+}
+function oturumMateryal(no){
+  const m = MATERYAL[String(no)] || {};
+  return {
+    videolar: (m.videolar || []).map(v => ({baslik: v.baslik || '', id: ytKimlik(v.youtube)})).filter(v => v.id),
+    notlar: (m.notlar || []).filter(n => n && n.dosya)
+  };
+}
+const IKON_V = '<svg viewBox="0 0 12 12"><path d="M3 1.5v9l7.5-4.5z"/></svg>';
+const IKON_N = '<svg viewBox="0 0 12 12"><path d="M2.5 1h4.8L10 3.7V11H2.5zM7 1.6V4h2.4"/></svg>';
+function rozetHtml(no){
+  const m = oturumMateryal(no);
+  if (!m.videolar.length && !m.notlar.length) return '';
+  return '<div class="rozetler">' +
+    (m.videolar.length ? '<span class="mrozet">' + IKON_V + (m.videolar.length > 1 ? m.videolar.length + ' video' : 'Video') + '</span>' : '') +
+    (m.notlar.length ? '<span class="mrozet">' + IKON_N + (m.notlar.length > 1 ? m.notlar.length + ' ders notu' : 'Ders notu') + '</span>' : '') +
+    '</div>';
+}
+function uzanti(d){ const m = String(d).split('?')[0].match(/\.([a-z0-9]{2,4})$/i); return m ? m[1].toUpperCase() : 'DOSYA'; }
+function videoHtml(v, yedekBaslik){
+  return '<div class="video"><button class="yt-oynat" type="button" data-yt="' + v.id + '" aria-label="Videoyu oynat: ' + kacis(v.baslik || yedekBaslik) + '" ' +
+    'style="background-image:url(https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg)">' +
+    '<span class="play"></span>' + (v.baslik ? '<span class="vad">' + kacis(v.baslik) + '</span>' : '') + '</button></div>';
+}
+function notHtml(n){
+  return '<a class="not" href="' + kacis(n.dosya) + '" target="_blank" rel="noopener">' +
+    '<span class="ikon">' + uzanti(n.dosya) + '</span><span class="ad">' + kacis(n.baslik || n.dosya.split('/').pop()) + '</span>' +
+    '<span class="ind">Aç ↗</span></a>';
+}
+function materyalHtml(o){
+  const m = oturumMateryal(o.no);
+  if (!m.videolar.length && !m.notlar.length) return '';
+  return '<div class="materyal">' +
+    (m.videolar.length ? '<div><p class="mbaslik">Oturum kaydı</p><div class="materyal">' + m.videolar.map(v => videoHtml(v, o.baslik)).join('') + '</div></div>' : '') +
+    (m.notlar.length ? '<div><p class="mbaslik">Ders notları</p><div class="notlar">' + m.notlar.map(notHtml).join('') + '</div></div>' : '') +
+    '</div>';
+}
+function materyalBolumCiz(){
+  let toplam = 0;
+  const html = GUNLER.map((g, gi) => {
+    const kartlar = g.oturumlar.filter(o => !o.mola).map(o => {
+      const m = oturumMateryal(o.no);
+      if (!m.videolar.length && !m.notlar.length) return '';
+      toplam++;
+      return '<article class="mkart"><div><div class="ks">' + o.bas + '–' + o.bit + '</div>' +
+        '<div class="kb">' + kacis(o.baslik) + '</div><div class="ke">' + kacis(o.egitmenler.join(', ')) + '</div></div>' +
+        m.videolar.map(v => videoHtml(v, o.baslik)).join('') +
+        (m.notlar.length ? '<div class="notlar">' + m.notlar.map(notHtml).join('') + '</div>' : '') +
+        '<button class="git" type="button" data-oturum="' + o.no + '" data-gun="' + gi + '">Programda göster</button></article>';
+    }).join('');
+    return kartlar ? '<div class="mgun"><h3>' + g.etiket + '<span>' + g.tarih + ' · ' + g.gun + '</span></h3><div class="mkartlar">' + kartlar + '</div></div>' : '';
+  }).join('');
+  document.getElementById('materyalListe').innerHTML = html;
+  document.getElementById('materyaller').hidden = toplam === 0;
+}
+function materyalYukle(){
+  fetch('materyaller.json', {cache: 'no-cache'})
+    .then(r => r.ok ? r.json() : {})
+    .then(d => { MATERYAL = (d && d.oturumlar) || {}; ciz(); materyalBolumCiz(); })
+    .catch(() => {});
+}
 
 const egitmenler = [];
 GUNLER.forEach(g => g.oturumlar.forEach(o => o.egitmenler.forEach(e => {
@@ -191,11 +300,11 @@ function icerikCiz(){
     const varGun = GUNLER.map((x,i)=>({i,n:gunOturum(x).length})).filter(x=>x.n>0);
     govde = '<div class="bosluk"><b>' + kisaAd(aktifEgitmen) + '</b> bu günde oturum yürütmüyor.' +
       (varGun.length ? '<br>Oturumları: ' + varGun.map(x=>GUNLER[x.i].etiket).join(', ') +
-        '<br><button data-git="' + varGun[0].i + '">' + GUNLER[varGun[0].i].etiket + '\u2019ne git</button>' : '') +
+        '<br><button data-git="' + varGun[0].i + '">' + GUNLER[varGun[0].i].etiket + '’ne git</button>' : '') +
       '</div>';
   } else {
     govde = '<div class="cizelge">' + list.map((o,i) =>
-      '<div class="oturum' + (o.mola?' ara':'') + '" style="animation-delay:' + (i*0.055).toFixed(3) + 's">' +
+      '<div class="oturum' + (o.mola?' ara':'') + '" data-no="' + o.no + '" style="animation-delay:' + (i*0.055).toFixed(3) + 's">' +
         '<span class="nokta" style="animation-delay:' + (i*0.055+0.1).toFixed(3) + 's"></span>' +
         '<div class="kart">' +
           (o.mola
@@ -204,9 +313,9 @@ function icerikCiz(){
             : '<button class="ust" type="button" aria-expanded="false">' +
                 '<div class="saat">' + o.bas + '<small>' + o.bit + '</small></div>' +
                 '<div class="orta"><div class="baslik">' + o.baslik + '</div>' +
-                '<div class="egitmen"><b>' + o.egitmenler.join(', ') + '</b></div></div>' +
+                '<div class="egitmen"><b>' + o.egitmenler.join(', ') + '</b></div>' + rozetHtml(o.no) + '</div>' +
                 '<span class="ok"></span></button>' +
-              '<div class="govde"><div class="iceric"><p>' + o.aciklama + '</p><div class="meta">' +
+              '<div class="govde"><div class="iceric"><p>' + o.aciklama + '</p>' + materyalHtml(o) + '<div class="meta">' +
                 o.egitmenler.map(e=>'<span class="etiket">'+e+'</span>').join('') +
                 o.destek.map(d=>'<span class="etiket destek">'+d+'</span>').join('') +
                 '<span class="etiket destek">' + o.kisi + ' katılımcı</span>' +
@@ -221,6 +330,23 @@ function icerikCiz(){
 function ciz(){ sekmeleriCiz(); filtreCiz(); icerikCiz(); }
 
 document.addEventListener('click', function(e){
+  const yt = e.target.closest('.yt-oynat');
+  if (yt){
+    const kutu = yt.parentElement;
+    kutu.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + yt.dataset.yt + '?autoplay=1&rel=0" title="' + (yt.getAttribute('aria-label') || 'Video') + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+    const gv = kutu.closest('.govde'); if (gv) gv.style.maxHeight = gv.scrollHeight + 'px';
+    return;
+  }
+  const mg = e.target.closest('[data-oturum]');
+  if (mg){
+    aktifGun = +mg.dataset.gun; aktifEgitmen = null; ciz();
+    const ot = document.querySelector('.oturum[data-no="' + mg.dataset.oturum + '"]');
+    if (ot){
+      const u = ot.querySelector('button.ust'); if (u) u.click();
+      ot.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
+    return;
+  }
   const git = e.target.closest('[data-git]');
   if (git){ aktifGun = +git.dataset.git; ciz(); return; }
   const s = e.target.closest('.sekme');
@@ -252,6 +378,7 @@ window.addEventListener('resize', function(){
 });
 
 ciz();
+materyalYukle();
 </script>
 </body>
 </html>
