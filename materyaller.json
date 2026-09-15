@@ -1,7 +1,12 @@
 {
   "oturumlar": {
     "10": {
-      "videolar": [],
+      "videolar": [
+        {
+          "baslik": "01 Kapsayici Almanca Dil Stratejileri Oturum1",
+          "youtube": "https://youtu.be/l6cFJxm-6wI"
+        }
+      ],
       "notlar": [
         {
           "baslik": "Kapsayıcı Almanca Öğretimi İçin Dil Stratejileri ve Uygulamalı Teknikler",
