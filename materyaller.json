@@ -1,3 +1,13 @@
 {
-  "oturumlar": {}
+  "oturumlar": {
+    "10": {
+      "videolar": [],
+      "notlar": [
+        {
+          "baslik": "Kapsayıcı Almanca Öğretimi İçin Dil Stratejileri ve Uygulamalı Teknikler",
+          "dosya": "notlar/10-kapsayici-almanca-ogretimi-icin-dil-stratejileri-v-mu345466.pdf"
+        }
+      ]
+    }
+  }
 }
