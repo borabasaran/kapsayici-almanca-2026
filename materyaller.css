@@ -1,0 +1,44 @@
+/* ---- Eğitim videoları ve çalışma notları ---- */
+.rozetler{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.4rem}
+.mrozet{display:inline-flex;align-items:center;gap:.3rem;font-size:.7rem;font-weight:500;letter-spacing:.02em;color:var(--bordo);background:var(--cream);border-radius:2rem;padding:.14rem .55rem}
+.mrozet svg{width:11px;height:11px;fill:currentColor}
+
+.materyal{display:grid;gap:1rem;margin:0 0 1rem;padding:.9rem;background:var(--paper);border:1px solid var(--line);border-radius:8px}
+.materyal .kolon{display:grid;gap:.5rem;min-width:0;align-content:start}
+.mbaslik{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+@media (min-width:720px){ .materyal.iki{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)} }
+
+.video{position:relative;width:100%;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:var(--bordo-dk)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt-oynat{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;cursor:pointer;background:var(--bordo-dk) center/cover no-repeat;display:flex;align-items:center;justify-content:center}
+.yt-oynat::before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(20,6,12,.75))}
+.yt-oynat .play{position:relative;width:52px;height:52px;border-radius:50%;background:rgba(122,18,48,.92);display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.yt-oynat .play::after{content:"";margin-left:4px;border-style:solid;border-width:9px 0 9px 15px;border-color:transparent transparent transparent #fff}
+.yt-oynat:hover .play{transform:scale(1.07);background:var(--bordo)}
+.yt-oynat .vad{position:absolute;left:.75rem;right:.75rem;bottom:.6rem;color:#fff;font-size:.82rem;font-weight:500;text-align:left;line-height:1.35;overflow-wrap:anywhere}
+
+.notlar{display:flex;flex-direction:column;gap:.4rem}
+.not{display:flex;align-items:center;gap:.7rem;border:1px solid var(--line);border-radius:6px;padding:.55rem .75rem;text-decoration:none;color:var(--ink);background:#fff;min-height:44px;transition:border-color .2s,background .2s}
+.not:hover{border-color:var(--bordo-lt);background:var(--cream)}
+.not .ikon{flex-shrink:0;width:28px;height:34px;border-radius:3px;background:var(--cream);color:var(--bordo);font-size:.56rem;font-weight:600;display:flex;align-items:flex-end;justify-content:center;padding-bottom:.28rem;letter-spacing:.04em}
+.not .ad{flex:1;min-width:0;font-size:.86rem;line-height:1.35;overflow-wrap:anywhere}
+.not .ind{flex-shrink:0;font-size:.74rem;color:var(--bordo);font-weight:500}
+
+/* Bordo bant */
+.mbant{background:var(--bordo);color:#fff;margin-top:clamp(2.2rem,5vw,4rem);padding:clamp(2.4rem,5vw,4rem) 0 clamp(2.6rem,5vw,4.2rem)}
+.mbant h2{color:#fff}
+.mbant .alt{color:rgba(255,255,255,.8)}
+.mbant + footer{margin-top:0}
+.mcip{flex:0 0 auto;scroll-snap-align:start;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:2rem;padding:.5rem .95rem;cursor:pointer;font-size:.84rem;min-height:40px;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.mcip:hover{border-color:#fff}
+.mcip.aktif{background:#fff;color:var(--bordo);border-color:#fff;font-weight:500}
+.mbant .kaydir{margin-bottom:1.3rem}
+.mkartlar{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:1rem}
+.mkart{background:#fff;color:var(--ink);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;min-width:0;box-shadow:0 8px 24px rgba(20,6,12,.18);animation:riseIn .45s ease both}
+.mkart .video{border-radius:0}
+.mkart .govdem{padding:.95rem 1rem 1rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
+.mkart .ks{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.mkart .ks b{color:var(--bordo);font-weight:600}
+.mkart .kb{font-family:'Fraunces',serif;font-weight:600;font-size:1rem;line-height:1.35;overflow-wrap:anywhere}
+.mkart .ke{font-size:.8rem;color:var(--muted);margin-top:-.25rem}
+.mkart .git{margin-top:auto;align-self:flex-start;border:0;background:none;color:var(--bordo);font-size:.8rem;cursor:pointer;padding:.35rem 0 0;text-decoration:underline;text-underline-offset:3px;min-height:36px}
