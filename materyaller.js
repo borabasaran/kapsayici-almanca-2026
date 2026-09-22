@@ -97,3 +97,6 @@ document.addEventListener('click', function(e){
     }
   }
 });
+
+// Sürüm imzası (imza.js): sayfanın altına "© 2026 Kapsayıcı Almanca v1.0 by bbasaran"
+(function () { var s = document.createElement('script'); s.src = 'imza.js'; s.defer = true; document.head.appendChild(s); })();
