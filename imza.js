@@ -1,9 +1,9 @@
 // Kapsayıcı Almanca: sürüm imzası. Görünür bir değişiklik yayınlandığında SURUM'u artırın;
-// sayfaların altında "© 2026 Kapsayıcı Almanca v1.0 by bbasaran" olarak görünür.
+// sayfaların altında "© 2026 Kapsayıcı Almanca v1.1 by bbasaran.net" olarak görünür.
 (function () {
   var AD = 'Kapsayıcı Almanca';
-  var SURUM = '1.0';
-  var YAZAR = 'bbasaran';
+  var SURUM = '1.1';
+  var YAZAR = 'bbasaran.net';
   var YAZAR_URL = 'https://bbasaran.net';
 
   function ekle() {
